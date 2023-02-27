@@ -112,7 +112,7 @@ section {
 }
 html,
 body {
-  color: #000000;
+  color: #222222;
   background-color: #ffffff;
   min-width: 375px; /* 최소 width 375px를 유지한다 */
 }
