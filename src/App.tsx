@@ -22,6 +22,7 @@ const Container = styled.div`
   ${flex('center', 'center', 'column')}
   width: 100vw;
   height: 100vh;
+  color: var(--BLACK);
 `;
 
 const Box1 = styled.div`
