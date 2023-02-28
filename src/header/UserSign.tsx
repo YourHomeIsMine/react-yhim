@@ -45,7 +45,7 @@ const SignIn = styled.div`
   padding-left: 10px;
   font-weight: 700;
 
-  &:hover {
+  :hover {
     background-color: ${Colors.MEDIUMGRAY};
   }
 `;
@@ -57,7 +57,7 @@ const SignUp = styled.div`
   text-align: left;
   padding-left: 10px;
 
-  &:hover {
+  :hover {
     background-color: ${Colors.MEDIUMGRAY};
   }
 `;
@@ -76,7 +76,7 @@ const Information = styled.div`
   text-align: left;
   padding-left: 10px;
 
-  &:hover {
+  :hover {
     background-color: ${Colors.MEDIUMGRAY};
   }
 `;

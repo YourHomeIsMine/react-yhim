@@ -38,7 +38,7 @@ const InfoTitle = styled.div`
   ${font(16, 500)};
   color: ${Colors.BLACK};
 
-  &:hover {
+  :hover {
     opacity: 1;
     cursor: pointer;
     background: yellow;
@@ -63,7 +63,7 @@ const LoginBtn = styled.div`
   border-radius: 20px;
   margin-left: 20px;
 
-  &:hover {
+  :hover {
     cursor: pointer;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12);
     transition-duration: 0.2s;
