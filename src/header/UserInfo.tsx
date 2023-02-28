@@ -39,7 +39,7 @@ const Icon = styled.img.attrs({
 const LoginBtn = styled.div`
   ${flex('', 'center')};
   height: 40px;
-  border: 1px solid #717171;
+  border: 1px solid ${Colors.MEDIUMGRAY};
   border-radius: 20px;
   margin-left: 20px;
 `;

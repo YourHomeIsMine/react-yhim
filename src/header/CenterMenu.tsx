@@ -24,7 +24,7 @@ const FlexBox = styled.div`
   ${font(16, 500)};
   color: ${Colors.BLACK};
   height: 40px;
-  border: 1px solid #717171;
+  border: 1px solid ${Colors.MEDIUMGRAY};
   border-radius: 20px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12);
 `;
