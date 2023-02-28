@@ -1,25 +1,24 @@
 import styled from 'styled-components';
-import { flex } from '../styles';
+import { flex, colors } from '../../styles';
 import UserInfo from './UserInfo';
 import Logo from './Logo';
 import CenterMenu from './CenterMenu';
-import Colors from '../styles/colors';
 
 const Header = () => {
   return (
-    <FlexBox>
+    <Container>
       <Logo />
       <CenterMenu />
       <UserInfo />
-    </FlexBox>
+    </Container>
   );
 };
 
-const FlexBox = styled.div`
+const Container = styled.div`
   ${flex('space-between', 'center')};
   width: 100%;
   height: 9vh;
-  border-bottom: 1px solid ${Colors.MEDIUMGRAY};
+  border-bottom: 1px solid ${colors.MEDIUMGRAY};
   position: fixed;
 `;
 

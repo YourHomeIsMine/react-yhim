@@ -116,6 +116,9 @@ body {
   background-color: #ffffff;
   min-width: 375px; /* 최소 width 375px를 유지한다 */
 }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
 menu,
 ol,
 ul {

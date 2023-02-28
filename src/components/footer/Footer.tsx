@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { colors, flex } from '../styles';
-import { font } from '../styles/font';
-import Colors from '../styles/colors';
+import { colors, flex, font } from 'styles';
+import Colors from 'styles/colors';
 
 const Footer = () => {
   return (

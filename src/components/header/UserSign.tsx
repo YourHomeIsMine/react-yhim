@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { colors, flex } from '../styles';
-import Colors from '../styles/colors';
+import { colors, flex } from 'styles';
 
 const UserSign = () => {
   return (
@@ -27,8 +26,7 @@ const UserBox = styled.div`
   top: 70px;
   right: 10px;
   border-radius: 20px;
-  font-family: 'Noto Sans KR', sans-serif;
-  border: 1px solid ${Colors.MEDIUMGRAY};
+  border: 1px solid ${colors.MEDIUMGRAY};
   background-color: ${colors.WHITE};
 `;
 
@@ -45,8 +43,8 @@ const SignIn = styled.div`
   padding-left: 10px;
   font-weight: 700;
 
-  &:hover {
-    background-color: ${Colors.MEDIUMGRAY};
+  :hover {
+    background-color: ${colors.MEDIUMGRAY};
   }
 `;
 
@@ -57,8 +55,8 @@ const SignUp = styled.div`
   text-align: left;
   padding-left: 10px;
 
-  &:hover {
-    background-color: ${Colors.MEDIUMGRAY};
+  :hover {
+    background-color: ${colors.MEDIUMGRAY};
   }
 `;
 
@@ -66,7 +64,7 @@ const OtherInfo = styled.div`
   ${flex('flex-start', 'center', 'column')};
   width: 100%;
   text-align: left;
-  border-top: 1px solid ${Colors.GRAY};
+  border-top: 1px solid ${colors.GRAY};
 `;
 
 const Information = styled.div`
@@ -76,8 +74,8 @@ const Information = styled.div`
   text-align: left;
   padding-left: 10px;
 
-  &:hover {
-    background-color: ${Colors.MEDIUMGRAY};
+  :hover {
+    background-color: ${colors.MEDIUMGRAY};
   }
 `;
 
