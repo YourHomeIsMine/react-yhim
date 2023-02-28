@@ -7,15 +7,15 @@ import colors from '../styles/colors';
 
 const Header = () => {
   return (
-    <FlexBox>
+    <Container>
       <Logo />
       <CenterMenu />
       <UserInfo />
-    </FlexBox>
+    </Container>
   );
 };
 
-const FlexBox = styled.div`
+const Container = styled.div`
   ${flex('space-between', 'center')};
   width: 100%;
   height: 9vh;
