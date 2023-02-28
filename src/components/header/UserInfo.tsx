@@ -6,7 +6,7 @@ import UserSign from './UserSign';
 const UserInfo = () => {
   const [isOpen, setIsOpen] = useState<Boolean>(false);
 
-  const openModalHandler = () => {
+  const openModal = () => {
     setIsOpen(!isOpen);
   };
 
@@ -14,7 +14,7 @@ const UserInfo = () => {
     <BtnBlock>
       <InfoTitle>당신의 공간을 네집내집하세요</InfoTitle>
       <Icon alt="world" src="/images/world.png"></Icon>
-      <LoginBtn onClick={openModalHandler}>
+      <LoginBtn onClick={openModal}>
         <Hamburger alt="hamburger" src="/images/hamburger.png" />
         <UserIcon alt="user" src="/images/user.png"></UserIcon>
         {isOpen ? <UserSign /> : null}
