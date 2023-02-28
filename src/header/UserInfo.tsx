@@ -2,18 +2,27 @@ import styled from 'styled-components';
 import Colors from '../styles/colors';
 import { flex } from '../styles';
 import { font } from '../styles/font';
+import { useState } from 'react';
+import UserSign from './UserSign';
 const worldImg = require('../images/world.png');
 const hamburgerImg = require('../images/hamburger.png');
 const userImg = require('../images/user.png');
 
 const UserInfo = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModalHandler = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <BtnBlock>
       <InfoTitle>당신의 공간을 네집내집하세요</InfoTitle>
       <Icon></Icon>
-      <LoginBtn>
+      <LoginBtn onClick={openModalHandler}>
         <Hamburger></Hamburger>
         <UserIcon></UserIcon>
+        {isOpen ? <UserSign /> : null}
       </LoginBtn>
     </BtnBlock>
   );
@@ -21,6 +30,7 @@ const UserInfo = () => {
 
 const BtnBlock = styled.div`
   ${flex('space-between', 'center')};
+  margin-right: 15px;
 `;
 
 const InfoTitle = styled.div`
