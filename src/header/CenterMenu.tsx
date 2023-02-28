@@ -6,17 +6,17 @@ const search = require('../images/search.png');
 
 const CenterMenu = () => {
   return (
-    <FlexBox>
+    <Container>
       <Menu>어디든지</Menu>
       <Menu>게스트 추가</Menu>
       <SearchBox>
         <Search></Search>
       </SearchBox>
-    </FlexBox>
+    </Container>
   );
 };
 
-const FlexBox = styled.div`
+const Container = styled.div`
   ${flex('center', 'center')};
   width: 30%;
   margin-left: 100px;
