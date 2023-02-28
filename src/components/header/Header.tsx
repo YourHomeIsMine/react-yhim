@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { flex } from '../styles';
+import { flex, colors } from '../../styles';
 import UserInfo from './UserInfo';
 import Logo from './Logo';
 import CenterMenu from './CenterMenu';
-import colors from '../styles/colors';
 
 const Header = () => {
   return (

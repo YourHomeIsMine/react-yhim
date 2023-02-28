@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, flex } from '../styles';
+import { colors, flex } from 'styles';
 
 const UserSign = () => {
   return (
@@ -26,7 +26,6 @@ const UserBox = styled.div`
   top: 70px;
   right: 10px;
   border-radius: 20px;
-  font-family: 'Noto Sans KR', sans-serif;
   border: 1px solid ${colors.MEDIUMGRAY};
   background-color: ${colors.WHITE};
 `;

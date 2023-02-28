@@ -1,12 +1,7 @@
 import styled from 'styled-components';
-import colors from '../styles/colors';
-import { flex } from '../styles';
-import { font } from '../styles/font';
+import { flex, font, colors } from 'styles';
 import { useState } from 'react';
 import UserSign from './UserSign';
-const worldImg = require('../images/world.png');
-const hamburgerImg = require('../images/hamburger.png');
-const userImg = require('../images/user.png');
 
 const UserInfo = () => {
   const [isOpen, setIsOpen] = useState<Boolean>(false);
@@ -18,10 +13,10 @@ const UserInfo = () => {
   return (
     <BtnBlock>
       <InfoTitle>당신의 공간을 네집내집하세요</InfoTitle>
-      <Icon></Icon>
+      <Icon alt="world" src="/images/world.png"></Icon>
       <LoginBtn onClick={openModalHandler}>
-        <Hamburger></Hamburger>
-        <UserIcon></UserIcon>
+        <Hamburger alt="hamburger" src="/images/hamburger.png" />
+        <UserIcon alt="user" src="/images/user.png"></UserIcon>
         {isOpen ? <UserSign /> : null}
       </LoginBtn>
     </BtnBlock>
@@ -34,7 +29,6 @@ const BtnBlock = styled.div`
 `;
 
 const InfoTitle = styled.div`
-  font-family: 'Noto Sans KR';
   ${font(16, 500)};
   color: ${colors.BLACK};
 
@@ -45,9 +39,7 @@ const InfoTitle = styled.div`
   }
 `;
 
-const Icon = styled.img.attrs({
-  src: `${worldImg}`,
-})`
+const Icon = styled.img`
   width: 20px;
   margin-left: 20px;
 
@@ -70,16 +62,12 @@ const LoginBtn = styled.div`
   }
 `;
 
-const Hamburger = styled.img.attrs({
-  src: `${hamburgerImg}`,
-})`
+const Hamburger = styled.img`
   width: 15px;
   margin-left: 15px;
 `;
 
-const UserIcon = styled.img.attrs({
-  src: `${userImg}`,
-})`
+const UserIcon = styled.img`
   width: 30px;
   margin: 0px 10px 0px 15px;
 `;

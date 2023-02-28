@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import { flex } from '../styles';
-import { font } from '../styles/font';
-import colors from '../styles/colors';
-const search = require('../images/search.png');
+import { flex, font, colors } from 'styles';
 
 const CenterMenu = () => {
   return (
@@ -10,7 +7,7 @@ const CenterMenu = () => {
       <Menu>어디든지</Menu>
       <Menu>게스트 추가</Menu>
       <SearchBox>
-        <Search></Search>
+        <Search alt="search" src="../images/search.png" />
       </SearchBox>
     </Container>
   );
@@ -20,7 +17,6 @@ const Container = styled.div`
   ${flex('center', 'center')};
   width: 30%;
   margin-left: 100px;
-  font-family: 'Noto Sans KR';
   ${font(16, 500)};
   color: ${colors.BLACK};
   height: 40px;
@@ -69,9 +65,7 @@ const SearchBox = styled.div`
   }
 `;
 
-const Search = styled.img.attrs({
-  src: `${search}`,
-})`
+const Search = styled.img`
   width: 20px;
 `;
 

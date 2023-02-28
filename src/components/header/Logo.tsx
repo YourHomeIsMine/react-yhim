@@ -1,17 +1,12 @@
 import styled from 'styled-components';
-const logo = require('../images/logo.png');
 
 const Logo = () => {
-  return <LogoImg />;
+  return <LogoImg alt="logo" src="../images/logo.png" />;
 };
 
 const LogoImg = styled.img`
-  width: 15%;
+  width: 10%;
   margin-left: 10px;
 `;
-
-LogoImg.defaultProps = {
-  src: logo,
-};
 
 export default Logo;
