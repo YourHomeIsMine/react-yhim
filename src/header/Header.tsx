@@ -17,7 +17,8 @@ const Header = () => {
 const FlexBox = styled.div`
   ${flex('space-between', 'center')};
   width: 100%;
-  height: 6vh;
+  height: 9vh;
+  background: aqua;
 `;
 
 export default Header;
