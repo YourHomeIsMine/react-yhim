@@ -27,6 +27,12 @@ const InfoTitle = styled.div`
   font-family: 'Noto Sans KR';
   ${font(16, 500)};
   color: ${Colors.BLACK};
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+    background: yellow;
+  }
 `;
 
 const Icon = styled.img.attrs({
@@ -34,6 +40,10 @@ const Icon = styled.img.attrs({
 })`
   width: 20px;
   margin-left: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const LoginBtn = styled.div`
@@ -42,6 +52,12 @@ const LoginBtn = styled.div`
   border: 1px solid ${Colors.MEDIUMGRAY};
   border-radius: 20px;
   margin-left: 20px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12);
+    transition-duration: 0.2s;
+  }
 `;
 
 const Hamburger = styled.img.attrs({

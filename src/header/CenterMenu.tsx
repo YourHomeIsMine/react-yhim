@@ -27,12 +27,21 @@ const FlexBox = styled.div`
   border: 1px solid ${Colors.MEDIUMGRAY};
   border-radius: 20px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12);
+
+  &:hover {
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.12);
+    transition-duration: 0.2s;
+  }
 `;
 
 const Menu = styled.div`
   ${flex('center', 'center')};
   padding: 10px;
 
+  &:hover {
+    cursor: pointer;
+  }
+  
   &:first-child::before {
     content: none;
   }
@@ -45,7 +54,6 @@ const Menu = styled.div`
     margin-left: 20px;
   }
 }
-
 `;
 
 const SearchBox = styled.div`
@@ -55,6 +63,10 @@ const SearchBox = styled.div`
   border-radius: 20px;
   ${flex('center', 'center')};
   color: ${Colors.LIGHTGRAY};
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Search = styled.img.attrs({
