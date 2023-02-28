@@ -3,7 +3,7 @@ import { flex } from '../styles';
 import UserInfo from './UserInfo';
 import Logo from './Logo';
 import CenterMenu from './CenterMenu';
-import Colors from '../styles/colors';
+import colors from '../styles/colors';
 
 const Header = () => {
   return (
@@ -19,7 +19,7 @@ const FlexBox = styled.div`
   ${flex('space-between', 'center')};
   width: 100%;
   height: 9vh;
-  border-bottom: 1px solid ${Colors.MEDIUMGRAY};
+  border-bottom: 1px solid ${colors.MEDIUMGRAY};
   position: fixed;
 `;
 

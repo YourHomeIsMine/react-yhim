@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Colors from '../styles/colors';
+import colors from '../styles/colors';
 import { flex } from '../styles';
 import { font } from '../styles/font';
 import { useState } from 'react';
@@ -36,7 +36,7 @@ const BtnBlock = styled.div`
 const InfoTitle = styled.div`
   font-family: 'Noto Sans KR';
   ${font(16, 500)};
-  color: ${Colors.BLACK};
+  color: ${colors.BLACK};
 
   :hover {
     opacity: 1;
@@ -51,7 +51,7 @@ const Icon = styled.img.attrs({
   width: 20px;
   margin-left: 20px;
 
-  &:hover {
+  :hover {
     cursor: pointer;
   }
 `;
@@ -59,7 +59,7 @@ const Icon = styled.img.attrs({
 const LoginBtn = styled.div`
   ${flex('', 'center')};
   height: 40px;
-  border: 1px solid ${Colors.MEDIUMGRAY};
+  border: 1px solid ${colors.MEDIUMGRAY};
   border-radius: 20px;
   margin-left: 20px;
 

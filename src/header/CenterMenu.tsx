@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { flex } from '../styles';
 import { font } from '../styles/font';
-import Colors from '../styles/colors';
+import colors from '../styles/colors';
 const search = require('../images/search.png');
 
 const CenterMenu = () => {
@@ -22,9 +22,9 @@ const Container = styled.div`
   margin-left: 100px;
   font-family: 'Noto Sans KR';
   ${font(16, 500)};
-  color: ${Colors.BLACK};
+  color: ${colors.BLACK};
   height: 40px;
-  border: 1px solid ${Colors.MEDIUMGRAY};
+  border: 1px solid ${colors.MEDIUMGRAY};
   border-radius: 20px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12);
 
@@ -50,19 +50,19 @@ const Menu = styled.div`
     display: block;
     width: 1px;
     height: 20px;
-    background-color: ${Colors.GRAY};
+    background-color: ${colors.GRAY};
     margin-left: 20px;
   }
 }
 `;
 
 const SearchBox = styled.div`
-  background: ${Colors.PINK};
+  background: ${colors.PINK};
   width: 30px;
   height: 30px;
   border-radius: 20px;
   ${flex('center', 'center')};
-  color: ${Colors.LIGHTGRAY};
+  color: ${colors.LIGHTGRAY};
 
   :hover {
     cursor: pointer;
