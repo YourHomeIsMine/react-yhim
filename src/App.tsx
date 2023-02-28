@@ -1,12 +1,8 @@
 import './styles/globals.css';
-import Header from './header/Header';
+import AppRouter from './AppRouter';
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-    </div>
-  );
+  return <AppRouter />;
 }
 
 export default App;

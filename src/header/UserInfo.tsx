@@ -9,7 +9,7 @@ const hamburgerImg = require('../images/hamburger.png');
 const userImg = require('../images/user.png');
 
 const UserInfo = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<Boolean>(false);
 
   const openModalHandler = () => {
     setIsOpen(!isOpen);
