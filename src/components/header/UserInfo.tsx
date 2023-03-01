@@ -25,7 +25,6 @@ const UserInfo = () => {
 
 const BtnBlock = styled.div`
   ${flex('space-between', 'center')};
-  margin-right: 15px;
 `;
 
 const InfoTitle = styled.div`
@@ -51,9 +50,9 @@ const Icon = styled.img`
 const LoginBtn = styled.div`
   ${flex('', 'center')};
   height: 40px;
+  margin-left: 20px;
   border: 1px solid ${colors.MEDIUMGRAY};
   border-radius: 20px;
-  margin-left: 20px;
 
   :hover {
     cursor: pointer;

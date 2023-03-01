@@ -16,13 +16,13 @@ const CenterMenu = () => {
 const Container = styled.div`
   ${flex('center', 'center')};
   width: 30%;
-  margin-left: 100px;
-  ${font(16, 500)};
-  color: ${colors.BLACK};
   height: 40px;
+  margin-left: 100px;
   border: 1px solid ${colors.MEDIUMGRAY};
   border-radius: 20px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12);
+  ${font(16, 500)};
+  color: ${colors.BLACK};
 
   :hover {
     box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.12);
@@ -46,18 +46,18 @@ const Menu = styled.div`
     display: block;
     width: 1px;
     height: 20px;
-    background-color: ${colors.GRAY};
     margin-left: 20px;
+    background-color: ${colors.GRAY};
   }
 }
 `;
 
 const SearchBox = styled.div`
-  background: ${colors.PINK};
+  ${flex('center', 'center')};
   width: 30px;
   height: 30px;
+  background: ${colors.PINK};
   border-radius: 20px;
-  ${flex('center', 'center')};
   color: ${colors.LIGHTGRAY};
 
   :hover {

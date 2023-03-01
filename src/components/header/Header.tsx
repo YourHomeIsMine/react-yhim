@@ -3,23 +3,31 @@ import { flex, colors } from '../../styles';
 import UserInfo from './UserInfo';
 import Logo from './Logo';
 import CenterMenu from './CenterMenu';
+import WrapperLayout from 'components/layout/WrapperLayout';
 
 const Header = () => {
   return (
     <Container>
-      <Logo />
-      <CenterMenu />
-      <UserInfo />
+      <WrapperLayout>
+        <Contents>
+          <Logo />
+          <CenterMenu />
+          <UserInfo />
+        </Contents>
+      </WrapperLayout>
     </Container>
   );
 };
 
-const Container = styled.div`
-  ${flex('space-between', 'center')};
-  width: 100%;
-  height: 9vh;
-  border-bottom: 1px solid ${colors.MEDIUMGRAY};
+const Container = styled.header`
   position: fixed;
+  width: 100%;
+  border-bottom: 1px solid ${colors.MEDIUMGRAY};
+`;
+
+const Contents = styled.div`
+  ${flex('space-between', 'center')};
+  padding: 10px 0;
 `;
 
 export default Header;
