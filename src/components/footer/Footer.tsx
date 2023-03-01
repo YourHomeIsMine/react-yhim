@@ -4,7 +4,7 @@ import Colors from 'styles/colors';
 
 const Footer = () => {
   return (
-    <FlexBox>
+    <Container>
       <TopBox>
         <LeftBox>
           <CorpInfo>© 2023 YHIM, Inc.</CorpInfo>
@@ -30,14 +30,13 @@ const Footer = () => {
         네집내집(YHIM) 플랫폼을 통하여 예약된 숙소, 체험, 호스트 서비스에 관한
         의무와 책임은 해당 서비스를 제공하는 호스트에게 있습니다.
       </BottomBox>
-    </FlexBox>
+    </Container>
   );
 };
 
-const FlexBox = styled.div`
+const Container = styled.footer`
   ${flex('', 'center', 'column')};
   width: 100%;
-  height: 10vh;
   position: fixed;
   bottom: 0;
   z-index: 100;
@@ -47,8 +46,8 @@ const FlexBox = styled.div`
 const TopBox = styled.div`
   ${flex('space-between', 'center')};
   width: 95%;
-  height: 40%;
-  margin-top: 10px;
+  height: 20px;
+  margin-top: 20px;
   color: ${colors.GRAY};
 `;
 
@@ -56,7 +55,7 @@ const BottomBox = styled.div`
   font-family: 'Noto Sans KR', sans-serif;
   ${font(8, 500, 10)}
   width: 95%;
-  height: 60%;
+  height: 50px;
   ${flex('flex-start', 'center', 'row')};
   color: #ced4da;
 `;

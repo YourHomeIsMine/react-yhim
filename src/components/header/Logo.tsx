@@ -5,7 +5,7 @@ const Logo = () => {
 };
 
 const LogoImg = styled.img`
-  width: 10%;
+  width: 150px;
   margin-left: 10px;
 `;
 

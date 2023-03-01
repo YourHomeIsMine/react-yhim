@@ -14,10 +14,10 @@ const Header = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.header`
   ${flex('space-between', 'center')};
   width: 100%;
-  height: 9vh;
+  height: 100px;
   border-bottom: 1px solid ${colors.MEDIUMGRAY};
   position: fixed;
 `;
