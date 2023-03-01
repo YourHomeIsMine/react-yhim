@@ -1,7 +1,5 @@
-import Layout from 'components/layout/Layout';
-
 function Main() {
-  return <Layout>Main</Layout>;
+  return <div>Main</div>;
 }
 
 export default Main;
