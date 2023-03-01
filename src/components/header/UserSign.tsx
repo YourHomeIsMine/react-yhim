@@ -6,8 +6,8 @@ const UserSign = () => {
     <>
       <UserBox>
         <SignInUpBox>
-          <SignIn>회원가입</SignIn>
           <SignUp>로그인</SignUp>
+          <SignIn>회원가입</SignIn>
         </SignInUpBox>
         <OtherInfo>
           <Information>당신의 공간을 네집내집하세요</Information>
@@ -35,7 +35,7 @@ const SignInUpBox = styled.div`
   margin-bottom: 10px;
 `;
 
-const SignIn = styled.div`
+const SignUp = styled.div`
   ${flex('flex-start', 'center', 'row')};
   width: 100%;
   height: 50px;
@@ -48,7 +48,7 @@ const SignIn = styled.div`
   }
 `;
 
-const SignUp = styled.div`
+const SignIn = styled.div`
   ${flex('flex-start', 'center', 'row')};
   width: 100%;
   height: 50px;
