@@ -45,12 +45,17 @@ const Container = styled.footer`
   z-index: 100;
 `;
 
-// TODO: 왼쪽 메뉴도 margin-right 적용해서 고칠 것 (마지막 요소 margin 없음)
 const TopBox = styled.div`
   ${flex('space-between', '')};
+  margin-bottom: 10px;
   color: ${colors.GRAY};
+  row-gap: 100px;
 
   span:last-child {
+    margin-right: 0;
+  }
+
+  a:last-child {
     margin-right: 0;
   }
 `;
@@ -66,7 +71,7 @@ const Text = styled.span`
 `;
 
 const Link = styled.a`
-  margin: 0 5px;
+  margin-right: 10px;
   ${font(15, 500)};
 `;
 
