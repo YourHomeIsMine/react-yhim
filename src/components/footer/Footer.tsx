@@ -36,11 +36,11 @@ const Footer = () => {
 
 const Container = styled.footer`
   ${flex('', 'center', 'column')};
-  width: 100%;
   position: fixed;
+  width: 100%;
   bottom: 0;
-  z-index: 100;
   border-top: 1px solid ${Colors.MEDIUMGRAY};
+  z-index: 100;
 `;
 
 const TopBox = styled.div`
@@ -52,11 +52,10 @@ const TopBox = styled.div`
 `;
 
 const BottomBox = styled.div`
-  font-family: 'Noto Sans KR', sans-serif;
-  ${font(8, 500, 10)}
+  ${flex('flex-start', 'center', 'row')};
   width: 95%;
   height: 50px;
-  ${flex('flex-start', 'center', 'row')};
+  ${font(8, 500, 10)}
   color: #ced4da;
 `;
 
@@ -70,7 +69,6 @@ const RightBox = styled.div`
 
 const CorpInfo = styled.span`
   margin: 0px 5px 0px 5px;
-  font-family: 'Noto Sans KR', sans-serif;
   ${font(15, 500)};
   cursor: pointer;
 `;

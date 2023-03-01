@@ -20,14 +20,14 @@ const UserSign = () => {
 };
 
 const UserBox = styled.div`
-  width: 260px;
-  height: 300px;
   position: absolute;
   top: 70px;
   right: 10px;
-  border-radius: 20px;
-  border: 1px solid ${colors.MEDIUMGRAY};
+  width: 260px;
+  height: 300px;
   background-color: ${colors.WHITE};
+  border: 1px solid ${colors.MEDIUMGRAY};
+  border-radius: 20px;
 `;
 
 const SignInUpBox = styled.div`
@@ -39,8 +39,8 @@ const SignIn = styled.div`
   ${flex('flex-start', 'center', 'row')};
   width: 100%;
   height: 50px;
-  text-align: left;
   padding-left: 10px;
+  text-align: left;
   font-weight: 700;
 
   :hover {
@@ -52,8 +52,8 @@ const SignUp = styled.div`
   ${flex('flex-start', 'center', 'row')};
   width: 100%;
   height: 50px;
-  text-align: left;
   padding-left: 10px;
+  text-align: left;
 
   :hover {
     background-color: ${colors.MEDIUMGRAY};
@@ -63,16 +63,16 @@ const SignUp = styled.div`
 const OtherInfo = styled.div`
   ${flex('flex-start', 'center', 'column')};
   width: 100%;
-  text-align: left;
   border-top: 1px solid ${colors.GRAY};
+  text-align: left;
 `;
 
 const Information = styled.div`
   ${flex('flex-start', 'center', 'row')};
   width: 100%;
   height: 50px;
-  text-align: left;
   padding-left: 10px;
+  text-align: left;
 
   :hover {
     background-color: ${colors.MEDIUMGRAY};
