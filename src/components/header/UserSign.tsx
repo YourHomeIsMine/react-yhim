@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import { colors, flex } from 'styles';
+import { Link } from 'react-router-dom';
 
 const UserSign = () => {
   return (
     <>
       <UserBox>
         <SignInUpBox>
-          <SignUp>로그인</SignUp>
-          <SignIn>회원가입</SignIn>
+          <SignIn>로그인</SignIn>
+          <SignUp to="/signup">회원가입</SignUp>
         </SignInUpBox>
         <OtherInfo>
           <Information>당신의 공간을 네집내집하세요</Information>
@@ -35,7 +36,7 @@ const SignInUpBox = styled.div`
   margin-bottom: 10px;
 `;
 
-const SignUp = styled.div`
+const SignIn = styled.div`
   ${flex('flex-start', 'center', 'row')};
   width: 100%;
   height: 50px;
@@ -48,7 +49,7 @@ const SignUp = styled.div`
   }
 `;
 
-const SignIn = styled.div`
+const SignUp = styled(Link)`
   ${flex('flex-start', 'center', 'row')};
   width: 100%;
   height: 50px;
