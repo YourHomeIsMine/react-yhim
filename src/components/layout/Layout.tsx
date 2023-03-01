@@ -15,6 +15,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
 const Container = styled.div`
   ${flex('', '', 'column')}
+  width: 100vw;
+  height: 100vh;
 `;
 
 export default Layout;

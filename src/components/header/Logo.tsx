@@ -6,7 +6,6 @@ const Logo = () => {
 
 const LogoImg = styled.img`
   width: 150px;
-  margin-left: 10px;
 `;
 
 export default Logo;

@@ -25,7 +25,6 @@ const UserInfo = () => {
 
 const BtnBlock = styled.div`
   ${flex('space-between', 'center')};
-  margin-right: 15px;
 `;
 
 const InfoTitle = styled.div`
