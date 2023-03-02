@@ -37,16 +37,16 @@ const TextForm: React.FC<Props> = ({
 };
 
 const Container = styled.div`
-  padding: 10px 0px 10px;
-  margin-left: 20px;
   display: grid;
   grid-template-columns: 1fr 3.5fr 1fr;
   align-items: center;
+  padding: 10px 0px 10px;
+  margin-left: 20px;
 `;
 
 const Label = styled.label`
-  ${font(15, 400)};
   padding: 10px;
+  ${font(15, 400)};
 `;
 
 const InputForm = styled.input`

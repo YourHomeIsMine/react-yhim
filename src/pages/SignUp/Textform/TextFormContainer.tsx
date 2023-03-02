@@ -1,6 +1,8 @@
 import TextForm from './TextForm';
 import React, { useState } from 'react';
 import { SignUpFormProps } from '../index';
+import styled from 'styled-components';
+import { colors } from '../../../styles';
 
 type signUpInfo = {
   data: SignUpFormProps;
@@ -9,7 +11,6 @@ type signUpInfo = {
 
 const TextFormContainer = ({ data, change }: signUpInfo) => {
   const { email, password, passwordCheck, name } = data;
-  console.log(change);
   const emailRegex =
     /^[0-9a-zA-Z]([-_\\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 
@@ -26,12 +27,12 @@ const TextFormContainer = ({ data, change }: signUpInfo) => {
         name="email"
         onChange={change}
       >
-        <button
+        <Button
           className={emailRegex.test(email) ? 'buttonOn' : 'button'}
           disabled
         >
           O
-        </button>
+        </Button>
       </TextForm>
       <TextForm
         label="비밀번호"
@@ -49,7 +50,7 @@ const TextFormContainer = ({ data, change }: signUpInfo) => {
         name="passwordCheck"
         onChange={change}
       >
-        <button
+        <Button
           className={
             password === passwordCheck &&
             password.length >= 8 &&
@@ -60,7 +61,7 @@ const TextFormContainer = ({ data, change }: signUpInfo) => {
           disabled
         >
           O
-        </button>
+        </Button>
       </TextForm>
       <TextForm
         label="이름"
@@ -73,5 +74,22 @@ const TextFormContainer = ({ data, change }: signUpInfo) => {
     </>
   );
 };
+
+const Button = styled.button`
+  width: 60%;
+  margin: 0px 10px 0px 20px;
+  padding: 15px 15px;
+  border-radius: 10px;
+  cursor: default;
+
+  &.buttonOn {
+    background-color: ${colors.PINK};
+    color: ${colors.MEDIUMGRAY};
+  }
+
+  &.button {
+    display: none;
+  }
+`;
 
 export default TextFormContainer;

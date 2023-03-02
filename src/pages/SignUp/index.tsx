@@ -71,27 +71,24 @@ const SignUp = () => {
 
 const Container = styled.main`
   border: 1px solid ${colors.MEDIUMGRAY};
+  border-radius: 20px;
 `;
 
 const Header = styled.header`
-  background-color: yellow;
-  text-align: center;
-  ${font(15, 600)};
   padding: 20px;
+  border-bottom: 1px solid ${colors.MEDIUMGRAY};
+  ${font(15, 600)};
+  text-align: center;
 `;
 
 const Title = styled.div`
-  background-color: tan;
-  ${font(20, 500)};
   padding: 20px;
+  margin-top: 10px;
+  ${font(20, 500)};
 `;
 
-const Fildset = styled.fieldset`
-  background-color: green;
-`;
+const Fildset = styled.fieldset``;
 
-const SignUpForm = styled.form`
-  background-color: rebeccapurple;
-`;
+const SignUpForm = styled.form``;
 
 export default SignUp;
