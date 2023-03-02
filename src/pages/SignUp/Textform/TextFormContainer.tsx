@@ -71,6 +71,14 @@ const TextFormContainer = ({ data, change }: signUpInfo) => {
         name="name"
         onChange={change}
       />
+      <TextForm
+        label="생년월일"
+        type="text"
+        placeholder="예) 1993-11-02"
+        className="birth"
+        name="birth"
+        onChange={change}
+      />
     </>
   );
 };

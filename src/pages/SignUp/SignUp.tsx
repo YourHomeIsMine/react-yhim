@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from 'Config';
 import styled from 'styled-components';
@@ -19,7 +19,12 @@ const SignUp = () => {
     password: '',
     passwordCheck: '',
     name: '',
+    birth: '',
   });
+
+  // useEffect(() => {
+  //   console.log(signUpInfo);
+  // }, [signUpInfo]);
 
   const navigate = useNavigate();
 
@@ -33,6 +38,7 @@ const SignUp = () => {
         email: signUpInfo.email,
         password: signUpInfo.password,
         nickname: signUpInfo.name,
+        birthdate: signUpInfo.birth,
       }),
     })
       .then((res) => res.json())
