@@ -2,7 +2,7 @@ import TextForm from './TextForm';
 import React, { useState } from 'react';
 import { SignUpFormProps } from '../SignUp';
 import styled from 'styled-components';
-import { colors } from '../../../styles';
+import { colors } from 'styles';
 
 type signUpInfo = {
   data: SignUpFormProps;
@@ -88,7 +88,7 @@ const Button = styled.button`
   }
 
   &.button {
-    display: none;
+    background-color: ${colors.LIGHTGRAY};
   }
 `;
 

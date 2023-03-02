@@ -55,7 +55,7 @@ const InputForm = styled.input`
   border: 1px solid ${colors.MEDIUMGRAY};
   border-radius: 10px;
 
-  &::placeholder {
+  ::placeholder {
     color: ${colors.GRAY};
   }
 
