@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from 'Config';
 import styled from 'styled-components';
@@ -19,12 +19,39 @@ const SignUp = () => {
     password: '',
     passwordCheck: '',
     name: '',
-    birth: '',
   });
+  const [birth, setBirth] = useState('');
 
-  // useEffect(() => {
-  //   console.log(signUpInfo);
-  // }, [signUpInfo]);
+  const birthRef = useRef<HTMLInputElement>(null);
+
+  const handleBirth = (e: any) => {
+    if (birthRef.current != null) {
+      const value = birthRef.current.value.replace(/\D+/g, '');
+      const numberLength = 8;
+
+      let result;
+      result = '';
+
+      for (let i = 0; i < value.length && i < numberLength; i++) {
+        switch (i) {
+          case 4:
+            result += '-';
+            break;
+          case 6:
+            result += '-';
+            break;
+
+          default:
+            break;
+        }
+        result += value[i];
+      }
+
+      birthRef.current.value = result;
+
+      setBirth(e.target.value);
+    }
+  };
 
   const navigate = useNavigate();
 
@@ -38,7 +65,7 @@ const SignUp = () => {
         email: signUpInfo.email,
         password: signUpInfo.password,
         nickname: signUpInfo.name,
-        birthdate: signUpInfo.birth,
+        birthdate: birth,
       }),
     })
       .then((res) => res.json())
@@ -70,6 +97,17 @@ const SignUp = () => {
       <fieldset>
         <form>
           <TextFormContainer data={signUpInfo} change={handleChange} />
+          <BirthContainer>
+            <BirthLabel>생년월일</BirthLabel>
+            <BirthForm
+              type="text"
+              placeholder="예) 1993-11-02"
+              value={birth}
+              name="birth"
+              ref={birthRef}
+              onChange={handleBirth}
+            />
+          </BirthContainer>
           <hr />
         </form>
         <TermForm />
@@ -109,4 +147,33 @@ const SignUpBtn = styled.button`
   color: ${colors.WHITE};
   ${font(18, 400)}
 `;
+
+const BirthContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 3.5fr 1fr;
+  align-items: center;
+  padding: 10px 0px 10px;
+  margin-left: 20px;
+`;
+
+const BirthLabel = styled.label`
+  padding: 10px;
+  ${font(15, 400)};
+`;
+
+const BirthForm = styled.input`
+  padding: 15px 25px 15px 10px;
+  margin-left: 10px;
+  border: 1px solid ${colors.MEDIUMGRAY};
+  border-radius: 10px;
+
+  ::placeholder {
+    color: ${colors.GRAY};
+  }
+
+  :focus {
+    outline-color: ${colors.PINK};
+  }
+`;
+
 export default SignUp;
