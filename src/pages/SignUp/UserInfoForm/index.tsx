@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextForm from './TextForm';
+import TextForm from '../Textform';
 import { colors, font } from 'styles';
 import { emailRegex, passwordRegex } from 'utils/regex';
 
 // HJ: 컴포넌트의 타입, 인터페이스 이름 : 컴포넌트명+Props 추천
-interface UserInfoProps {
+interface UserInfoFormProps {
   // HJ: data로 해도 되는데 signupInfo로 구체적으로 써주는 게 다른 사람도 알기 쉬을 듯
   // HJ: Singup.tsx 말고 type/---d.ts 로 파일 하나 만들어서 여기에 타입 선언해서 쓰는게 좋을 듯 (확장자 차이 : d.ts => 전역에서 사용 가능 / .ts import 해서 사용)
   signUpInfo: SignUpInfoType;
@@ -13,7 +13,7 @@ interface UserInfoProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const UserInfoForm = ({ signUpInfo, onChange }: UserInfoProps) => {
+const UserInfoForm = ({ signUpInfo, onChange }: UserInfoFormProps) => {
   const { email, password, passwordCheck, name, birthDate } = signUpInfo;
 
   return (

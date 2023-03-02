@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import TermForm from './TermForm/TermForm';
-import UserInfoForm from './Textform/UserInfoForm';
+import TermForm from './TermForm';
+import UserInfoForm from './UserInfoForm';
 import { colors, flex, font } from 'styles';
 import convertDate from 'utils/convertDate';
 
