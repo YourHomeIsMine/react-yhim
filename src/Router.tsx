@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from 'pages/Main';
-import SignUp from 'pages/SignUp';
+import SignUp from 'pages/SignUp/SignUp';
 import Layout from 'components/layout/Layout';
 
 const Router = () => {

@@ -1,6 +1,6 @@
 import TextForm from './TextForm';
 import React, { useState } from 'react';
-import { SignUpFormProps } from '../index';
+import { SignUpFormProps } from '../SignUp';
 import styled from 'styled-components';
 import { colors } from '../../../styles';
 
