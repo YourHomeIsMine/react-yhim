@@ -44,7 +44,8 @@ const SignUp = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.message === 'User Created!') {
-          navigate('/main');
+          alert('회원가입을 축하드립니다.');
+          navigate('/');
         } else if (result.message === 'Invalid Email!') {
           alert('이메일 조건에 밎지 않습니다!');
         } else if (result.message === 'Invalid Password!') {
