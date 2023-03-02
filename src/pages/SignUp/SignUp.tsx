@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { colors, flex, font } from 'styles';
-import TextFormContainer from './Textform/TextFormContainer';
 import TermForm from './TermForm/TermForm';
+import TextFormContainer from './Textform/TextFormContainer';
+import { colors, flex, font } from 'styles';
 
 export type SignUpFormProps = {
   email: string;

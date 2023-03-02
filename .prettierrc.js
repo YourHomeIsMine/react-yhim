@@ -9,4 +9,13 @@ module.exports = {
   orderedImports: true,
   bracketSpacing: true,
   jsxBracketSameLine: false,
+  importOrder: [
+    '^react/*',
+    '^react-router-dom/*',
+    '^styled-components/*',
+    '^[./]*',
+    '^styles/*',
+    '^types/*',
+  ],
+  mportOrderSortSpecifiers: true,
 };
