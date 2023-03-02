@@ -61,7 +61,7 @@ const SignUp = () => {
       <Title>YHIM에 오신 것을 환영합니다.</Title>
       <Fildset>
         <SignUpForm>
-          <TextFormContainer data={signUpInfo} handleChange={handleChange} />
+          <TextFormContainer data={signUpInfo} change={handleChange} />
           <hr />
         </SignUpForm>
       </Fildset>
