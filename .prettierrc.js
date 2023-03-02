@@ -14,6 +14,7 @@ module.exports = {
     '^react-router-dom/*',
     '^styled-components/*',
     '^[./]*',
+    '^utils/*',
     '^styles/*',
     '^types/*',
   ],

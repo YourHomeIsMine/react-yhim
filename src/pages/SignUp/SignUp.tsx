@@ -1,16 +1,12 @@
-import React, { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import TermForm from './TermForm/TermForm';
-import TextFormContainer from './Textform/TextFormContainer';
+import UserInfoForm from './Textform/UserInfoForm';
 import { colors, flex, font } from 'styles';
+import convertDate from 'utils/convertDate';
 
-export type SignUpFormProps = {
-  email: string;
-  password: string;
-  passwordCheck: string;
-  name: string;
-};
+// HJ: prettier 에 importOrder를 추가했습니다. 필요한 것들은 더 추가해서 쓰세요!
 
 const SignUp = () => {
   const [signUpInfo, setSignUpInfo] = useState({
@@ -18,39 +14,8 @@ const SignUp = () => {
     password: '',
     passwordCheck: '',
     name: '',
+    birthDate: '',
   });
-  const [birth, setBirth] = useState('');
-
-  const birthRef = useRef<HTMLInputElement>(null);
-
-  const handleBirth = (e: any) => {
-    if (birthRef.current != null) {
-      const value = birthRef.current.value.replace(/\D+/g, '');
-      const numberLength = 8;
-
-      let result;
-      result = '';
-
-      for (let i = 0; i < value.length && i < numberLength; i++) {
-        switch (i) {
-          case 4:
-            result += '-';
-            break;
-          case 6:
-            result += '-';
-            break;
-
-          default:
-            break;
-        }
-        result += value[i];
-      }
-
-      birthRef.current.value = result;
-
-      setBirth(e.target.value);
-    }
-  };
 
   const navigate = useNavigate();
 
@@ -66,7 +31,7 @@ const SignUp = () => {
           email: signUpInfo.email,
           password: signUpInfo.password,
           nickname: signUpInfo.name,
-          birthdate: birth,
+          birthdate: signUpInfo.birthDate,
         }),
       },
     );
@@ -89,7 +54,26 @@ const SignUp = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+
+    if (name === 'birthDate') return handleBirthDate(value);
+
     setSignUpInfo({ ...signUpInfo, [name]: value });
+  };
+
+  const handleBirthDate = (value: string) => {
+    // HJ : 글자 입력 10자 이하로 제한
+    // HJ: early return 패턴입니다. 아래 setSignUpInfo가 실행되지 않도록 막습니다.
+    if (value.length > 10) return;
+
+    // HJ : delete 키 입력을 고려해서 글자수가 더 줄어들 경우 value 그대로 저장
+    if (value.length < signUpInfo.birthDate.length) {
+      setSignUpInfo({ ...signUpInfo, birthDate: value });
+      return;
+    }
+
+    // HJ: handleBirth는 하이픈을 붙이는 기능인데, 여러 곳에서 쓰이는 편이니 utils/convertDate.ts로 따로 만들어주면 좋아요
+    const converted = convertDate(value);
+    setSignUpInfo({ ...signUpInfo, birthDate: converted });
   };
 
   return (
@@ -97,21 +81,8 @@ const SignUp = () => {
       <Header>회원가입 및 소셜로그인</Header>
       <Title>YHIM에 오신 것을 환영합니다.</Title>
       <fieldset>
-        <form>
-          <TextFormContainer data={signUpInfo} change={handleChange} />
-          <BirthContainer>
-            <BirthLabel>생년월일</BirthLabel>
-            <BirthForm
-              type="text"
-              placeholder="예) 1993-11-02"
-              value={birth}
-              name="birth"
-              ref={birthRef}
-              onChange={handleBirth}
-            />
-          </BirthContainer>
-          <hr />
-        </form>
+        <UserInfoForm signUpInfo={signUpInfo} onChange={handleChange} />
+        <hr />
         <TermForm />
       </fieldset>
       <SignUpBtn onClick={signup}>회원가입</SignUpBtn>
@@ -148,34 +119,6 @@ const SignUpBtn = styled.button`
   background-color: ${colors.PINK};
   color: ${colors.WHITE};
   ${font(18, 400)}
-`;
-
-const BirthContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3.5fr 1fr;
-  align-items: center;
-  padding: 10px 0px 10px;
-  margin-left: 20px;
-`;
-
-const BirthLabel = styled.label`
-  padding: 10px;
-  ${font(15, 400)};
-`;
-
-const BirthForm = styled.input`
-  padding: 15px 25px 15px 10px;
-  margin-left: 10px;
-  border: 1px solid ${colors.MEDIUMGRAY};
-  border-radius: 10px;
-
-  ::placeholder {
-    color: ${colors.GRAY};
-  }
-
-  :focus {
-    outline-color: ${colors.PINK};
-  }
 `;
 
 export default SignUp;
