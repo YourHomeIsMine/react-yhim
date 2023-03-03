@@ -2,11 +2,11 @@ import { TERM_FORM_LIST } from './constant';
 import React from 'react';
 import styled from 'styled-components';
 
-const TermForm = () => {
+const PolicyForm = () => {
   return (
-    <TermContainer>
+    <PolicyContainer>
       {TERM_FORM_LIST.map((content, i) => (
-        <TermList key={`term-form-${i}`}>
+        <PolicyList key={`term-form-${i}`}>
           <label>
             <span>
               <InputBox type="checkbox"></InputBox>
@@ -16,17 +16,17 @@ const TermForm = () => {
               </ChoiceContent>
             </span>
           </label>
-        </TermList>
+        </PolicyList>
       ))}
-    </TermContainer>
+    </PolicyContainer>
   );
 };
 
-const TermContainer = styled.ul`
+const PolicyContainer = styled.ul`
   padding: 20px;
 `;
 
-const TermList = styled.li`
+const PolicyList = styled.li`
   margin-bottom: 10px;
 `;
 
@@ -44,4 +44,4 @@ const ChoiceContent = styled.b`
     color: red;
   }
 `;
-export default TermForm;
+export default PolicyForm;
