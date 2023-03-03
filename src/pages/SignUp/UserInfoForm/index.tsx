@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextForm from '../Textform';
+import TextInput from '../TextInput';
 import { colors, font } from 'styles';
 import { emailRegex, passwordRegex } from 'utils/regex';
 
@@ -18,7 +18,7 @@ const UserInfoForm = ({ signUpInfo, onChange }: UserInfoFormProps) => {
 
   return (
     <>
-      <TextForm
+      <TextInput
         label="이메일"
         type="text"
         placeholder="예) YourHomeIsMine@yhim.com"
@@ -32,8 +32,8 @@ const UserInfoForm = ({ signUpInfo, onChange }: UserInfoFormProps) => {
         >
           O
         </Button>
-      </TextForm>
-      <TextForm
+      </TextInput>
+      <TextInput
         label="비밀번호"
         type="password"
         placeholder="영문 대소문자, 숫자, 특수문자를 포함하여 8자리 이상"
@@ -41,7 +41,7 @@ const UserInfoForm = ({ signUpInfo, onChange }: UserInfoFormProps) => {
         name="password"
         onChange={onChange}
       />
-      <TextForm
+      <TextInput
         label="비밀번호 확인"
         type="password"
         placeholder="비밀번호를 한번 더 입력해주세요"
@@ -61,8 +61,8 @@ const UserInfoForm = ({ signUpInfo, onChange }: UserInfoFormProps) => {
         >
           O
         </Button>
-      </TextForm>
-      <TextForm
+      </TextInput>
+      <TextInput
         label="이름"
         type="text"
         placeholder="이름을 입력해주세요"

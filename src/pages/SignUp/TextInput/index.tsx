@@ -12,7 +12,7 @@ type Props = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const TextForm: React.FC<Props> = ({
+const TextInput: React.FC<Props> = ({
   children,
   label,
   type,
@@ -64,4 +64,4 @@ const InputForm = styled.input`
   }
 `;
 
-export default TextForm;
+export default TextInput;
