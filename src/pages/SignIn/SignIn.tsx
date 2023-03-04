@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import TextInput from '../SignUp/TextInput';
 import { emailRegex, passwordRegex } from 'utils/regex';
 import { useNavigate } from 'react-router-dom';
+import KakakoLogin from './KakakoLogin';
 
 const SignIn = () => {
   const [signInList, setSignInList] = useState({
@@ -93,6 +94,7 @@ const SignIn = () => {
       >
         로그인
       </SignUpBtn>
+      <KakakoLogin />
     </Container>
   );
 };
@@ -136,4 +138,5 @@ const SignUpBtn = styled.button`
   color: ${colors.WHITE};
   ${font(18, 400)}
 `;
+
 export default SignIn;
