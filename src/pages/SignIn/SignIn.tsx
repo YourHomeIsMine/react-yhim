@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { colors, flex, font } from 'styles';
 import React, { useState } from 'react';
 import TextInput from '../SignUp/TextInput';
+import { emailRegex, passwordRegex } from 'utils/regex';
 import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
@@ -13,6 +14,47 @@ const SignIn = () => {
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setSignInList({ ...signInList, [name]: value });
+  };
+
+  const isValid = () => {
+    if (
+      emailRegex.test(signInList.email) &&
+      passwordRegex.test(signInList.password) &&
+      signInList.password.length >= 8
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const navigate = useNavigate();
+
+  const signin = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_API_ADDRESS}/users/signin`,
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'accplication/json',
+        },
+        body: JSON.stringify({
+          email: signInList.email,
+          password: signInList.password,
+        }),
+      },
+    );
+
+    const { message } = await res.json();
+
+    if (message === 'SUCCESS') {
+      alert('로그인에 성공했습니다. YHIM에 오신걸 환영합니다.');
+      navigate('/');
+    } else if (message === 'INVALID_USER') {
+      alert('이메일 또는 비밀번호가 잘못 입력되었습니다.');
+    } else if (message === 'KEY_ERROR') {
+      alert('이메일 또는 비밀번호를 모두 입력해주세요.');
+    }
   };
 
   return (
@@ -38,7 +80,14 @@ const SignIn = () => {
         />
       </TextList>
       <hr />
-      <SignUpBtn>로그인</SignUpBtn>
+      <SignUpBtn
+        type="button"
+        className={isValid() ? 'loginButtonOn' : 'loginButton'}
+        disabled={!isValid()}
+        onClick={signin}
+      >
+        로그인
+      </SignUpBtn>
     </Container>
   );
 };
