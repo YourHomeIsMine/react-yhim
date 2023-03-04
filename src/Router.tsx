@@ -3,6 +3,7 @@ import Main from 'pages/Main';
 import SignUp from 'pages/SignUp/SignUp';
 import Layout from 'components/layout/Layout';
 import SignIn from './pages/SignIn/SignIn';
+import KakakoLogin from './pages/SignIn/KakakoLogin';
 
 const Router = () => {
   return (
