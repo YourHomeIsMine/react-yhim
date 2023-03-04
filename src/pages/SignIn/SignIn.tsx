@@ -45,10 +45,15 @@ const SignIn = () => {
       },
     );
 
-    const { message } = await res.json();
+    const { message, access_token } = await res.json();
 
     if (message === 'SUCCESS') {
       alert('로그인에 성공했습니다. YHIM에 오신걸 환영합니다.');
+      if (access_token) {
+        localStorage.setItem('token', access_token);
+      } else {
+        alert('일시적인 token 오류입니다. 관리자에게 문의하세요');
+      }
       navigate('/');
     } else if (message === 'INVALID_USER') {
       alert('이메일 또는 비밀번호가 잘못 입력되었습니다.');
