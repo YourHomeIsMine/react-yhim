@@ -6,7 +6,7 @@ const Card = (props: MainCardInfoTypes) => {
     props;
 
   return (
-    <ContentContainer key={id}>
+    <ContentContainer>
       <ProductLikeImg alt="heart" src="../images/heart.png"></ProductLikeImg>
       <ContentImage src={images}></ContentImage>
       <ContentInfo>
@@ -27,8 +27,8 @@ const ContentContainer = styled.div`
 `;
 
 const ContentImage = styled.img`
-  width: 350px;
-  height: 350px;
+  width: 330px;
+  height: 330px;
   object-fit: cover;
   border-radius: 20px;
 `;

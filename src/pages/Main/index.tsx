@@ -16,15 +16,14 @@ const Main = () => {
 
   console.log('productList : ' + productList);
 
-  useEffect(() => {
-    console.log(productList);
-  }, [productList]);
+  useEffect(() => {}, [productList]);
   return (
     <ListContainer>
       <CategoryList></CategoryList>
       <ContentList>
         {productList.map((product) => (
           <Card
+            key={product.room_id}
             id={product.room_id}
             room_name={product.room_name}
             images={product.images[0]}
