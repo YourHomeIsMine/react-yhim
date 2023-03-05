@@ -22,7 +22,9 @@ const Header = () => {
 const Container = styled.header`
   position: fixed;
   width: 100%;
+  background-color: ${colors.WHITE};
   border-bottom: 1px solid ${colors.MEDIUMGRAY};
+  z-index: 100;
 `;
 
 const Contents = styled.div`
