@@ -10,6 +10,7 @@ const Router = () => {
         <Route element={<Layout />}>
           <Route path="/" element={<Main />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/" element={<Main />} />
         </Route>
       </Routes>
     </BrowserRouter>
