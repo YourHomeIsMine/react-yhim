@@ -1,19 +1,45 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Card from './Card';
 import { flex } from 'styles';
 import Category from '../Category';
 
 const Main = () => {
   const [productList, setProductList] = useState<any[]>([]);
+  const [offset, setOffset] = useState<number>(0);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_ADDRESS}/rooms?page=0&limit=8`)
+    fetch(
+      `${process.env.REACT_APP_API_ADDRESS}/rooms?page=0&limit=${
+        (offset + 1) * 8
+      }`,
+    )
       .then((res) => res.json())
       .then((data) => {
         setProductList(data.results);
       });
+  }, [offset]);
+
+  // 무한스크롤
+  const handleScroll = useCallback((): void => {
+    const { innerHeight } = window;
+    const { scrollHeight } = document.body;
+    const { scrollTop } = document.documentElement;
+    // console.log('a : ' + Math.round(scrollTop + innerHeight));
+    // console.log('b : ' + scrollHeight);
+
+    if (Math.round(scrollTop + innerHeight) >= scrollHeight) {
+      setOffset((prevOffset: number) => prevOffset + 1);
+    }
   }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, true);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+    };
+  }, [handleScroll]);
 
   useEffect(() => {}, [productList]);
   return (
