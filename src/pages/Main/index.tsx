@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import Card from './Card';
-import { flex } from '../../styles';
+import { flex } from 'styles';
+import Category from '../Category';
 
 const Main = () => {
   const [productList, setProductList] = useState<any[]>([]);
@@ -14,12 +15,12 @@ const Main = () => {
       });
   }, []);
 
-  console.log('productList : ' + productList);
-
   useEffect(() => {}, [productList]);
   return (
     <ListContainer>
-      <CategoryList></CategoryList>
+      <CategoryList>
+        <Category />
+      </CategoryList>
       <ContentList>
         {productList.map((product) => (
           <Card
@@ -44,10 +45,13 @@ const ListContainer = styled.div`
   ${flex('center', 'center', 'column')};
   padding: 80px 0px;
 `;
-const CategoryList = styled.div``;
+const CategoryList = styled.div`
+  width: 100%;
+`;
 const ContentList = styled.div`
   ${flex('center', 'center')};
   flex-wrap: wrap;
+  margin-top: 120px;
 `;
 
 export default Main;

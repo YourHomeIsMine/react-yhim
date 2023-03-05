@@ -23,7 +23,7 @@ const Card = (props: MainCardInfoTypes) => {
 
 const ContentContainer = styled.div`
   ${flex('center', '', 'column')};
-  padding: 30px 15px 25px 15px;
+  padding: 10px 15px 25px 15px;
 `;
 
 const ContentImage = styled.img`
