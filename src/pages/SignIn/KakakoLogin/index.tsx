@@ -38,9 +38,9 @@ const KakakoLogin = () => {
   return (
     <SocialLoginList>
       <BorderList>
-        <BorderLeft></BorderLeft>
+        <BorderLeft />
         <BorderText>또는</BorderText>
-        <BorderRight></BorderRight>
+        <BorderRight />
       </BorderList>
       <KakaoButton onClick={handleLogin}>
         <KakaoLogo alt="kakaoLogo" src="../images/kakao.svg"></KakaoLogo>
