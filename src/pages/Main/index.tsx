@@ -10,7 +10,7 @@ const Main = () => {
   const [category, setCategory] = useState<number>();
 
   const uri =
-    category !== undefined
+    category !== undefined && !(category == 0)
       ? `${process.env.REACT_APP_API_ADDRESS}/rooms?category=${category}&page=0`
       : `${process.env.REACT_APP_API_ADDRESS}/rooms?page=0`;
 
@@ -45,7 +45,7 @@ const Main = () => {
   return (
     <ListContainer>
       <CategoryList>
-        <Category setCategory={setCategory} />
+        <Category setCategory={setCategory} setOffset={setOffset} />
       </CategoryList>
       <ContentList>
         {productList.map((product) => (

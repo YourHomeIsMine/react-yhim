@@ -6,22 +6,25 @@ const Category = (props: any) => {
   function handleCheck(event: any) {
     const category = event.target.className.toString().slice(-1);
     props.setCategory(category);
+    props.setOffset(0);
   }
 
   return (
     <CategoryList>
-      {CATEGORY_LIST.map((category, i) => (
+      {CATEGORY_LIST.map((category) => (
         <CategoryRoomFilter
-          key={`category-list-${i}`}
-          className={`${i}`}
+          key={`${category.number}`}
+          className={`${category.number}`}
           onClick={handleCheck}
         >
           <CategoryImage
             alt={category.name}
             src={category.imageUrl}
-            className={`${i}`}
+            className={`${category.number}`}
           />
-          <CategoryName className={`${i}`}>{category.name}</CategoryName>
+          <CategoryName className={`${category.number}`}>
+            {category.name}
+          </CategoryName>
         </CategoryRoomFilter>
       ))}
       <CategoryFilter>
@@ -43,6 +46,7 @@ const CategoryList = styled.div`
   background-color: ${colors.WHITE};
   z-index: 90;
 `;
+
 const CategoryRoomFilter = styled.div`
   ${flex('', 'center', 'column')};
   margin: 10px 25px 0px 25px;
