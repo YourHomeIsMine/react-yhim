@@ -15,7 +15,7 @@ const Layout = () => {
 };
 
 const Container = styled.div`
-  ${flex('', '', 'column')}
+  ${flex('center', 'center', 'column')}
   width: 100vw;
   height: 100vh;
 `;

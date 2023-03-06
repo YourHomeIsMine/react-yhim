@@ -21,6 +21,7 @@ const Header = () => {
 
 const Container = styled.header`
   position: fixed;
+  top: 0;
   width: 100%;
   background-color: ${colors.WHITE};
   border-bottom: 1px solid ${colors.MEDIUMGRAY};
