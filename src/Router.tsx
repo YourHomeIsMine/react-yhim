@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from 'pages/Main';
 import Layout from 'components/layout/Layout';
 import SignIn from './pages/SignIn/SignIn';
-import SignUp from './pages/SignUp';
+import SignUp from './pages/SignUp/SignUp';
 
 const Router = () => {
   return (

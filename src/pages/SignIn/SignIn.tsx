@@ -5,6 +5,7 @@ import TextInput from '../SignUp/TextInput';
 import { emailRegex, passwordRegex } from 'utils/regex';
 import { useNavigate } from 'react-router-dom';
 import KakakoLogin from './KakakoLogin';
+import { setAccessToken } from 'utils/jwt';
 
 const SignIn = () => {
   const [signInList, setSignInList] = useState({
@@ -37,7 +38,7 @@ const SignIn = () => {
       {
         method: 'POST',
         headers: {
-          Accept: 'accplication/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify({
           email: signInList.email,
@@ -51,7 +52,7 @@ const SignIn = () => {
     if (message === 'SUCCESS') {
       alert('로그인에 성공했습니다. YHIM에 오신걸 환영합니다.');
       if (access_token) {
-        localStorage.setItem('token', access_token);
+        setAccessToken(access_token);
       } else {
         alert('일시적인 token 오류입니다. 관리자에게 문의하세요');
       }
