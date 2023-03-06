@@ -2,13 +2,26 @@ import styled from 'styled-components';
 import { CATEGORY_LIST } from './constant';
 import { colors, flex, font } from 'styles';
 
-const Category = () => {
+const Category = (props: any) => {
+  function handleCheck(event: any) {
+    const category = event.target.className.toString().slice(-1);
+    props.setCategory(category);
+  }
+
   return (
     <CategoryList>
       {CATEGORY_LIST.map((category, i) => (
-        <CategoryRoomFilter key={`category-list-${i}`}>
-          <CategoryImage alt={category.name} src={category.imageUrl} />
-          <CategoryName>{category.name}</CategoryName>
+        <CategoryRoomFilter
+          key={`category-list-${i}`}
+          className={`${i}`}
+          onClick={handleCheck}
+        >
+          <CategoryImage
+            alt={category.name}
+            src={category.imageUrl}
+            className={`${i}`}
+          />
+          <CategoryName className={`${i}`}>{category.name}</CategoryName>
         </CategoryRoomFilter>
       ))}
       <CategoryFilter>
@@ -41,8 +54,8 @@ const CategoryRoomFilter = styled.div`
   }
 `;
 const CategoryImage = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
 `;
 const CategoryName = styled.div`
   margin-top: 20px;
