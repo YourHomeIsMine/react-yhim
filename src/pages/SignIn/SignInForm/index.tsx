@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { colors, font } from 'styles';
 
-type Props = {
-  children?: ReactNode;
+type TextInputProps = {
   label: string;
   type: string;
   placeholder: string;
@@ -12,8 +11,7 @@ type Props = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const TextInput: React.FC<Props> = ({
-  children,
+const TextInput: React.FC<TextInputProps> = ({
   label,
   type,
   placeholder,
@@ -31,7 +29,6 @@ const TextInput: React.FC<Props> = ({
         name={name}
         onChange={onChange}
       />
-      {children}
     </Container>
   );
 };
