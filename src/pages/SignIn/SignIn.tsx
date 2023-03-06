@@ -8,21 +8,21 @@ import KakakoLogin from './KakakoLogin';
 import { setAccessToken } from 'utils/jwt';
 
 const SignIn = () => {
-  const [signInList, setSignInList] = useState({
+  const [signInData, setSignInData] = useState<SignInInfoType>({
     email: '',
     password: '',
   });
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
-    setSignInList({ ...signInList, [name]: value });
+    setSignInData({ ...signInData, [name]: value });
   };
 
   const isValid = () => {
     if (
-      emailRegex.test(signInList.email) &&
-      passwordRegex.test(signInList.password) &&
-      signInList.password.length >= 8
+      emailRegex.test(signInData.email) &&
+      passwordRegex.test(signInData.password) &&
+      signInData.password.length >= 8
     ) {
       return true;
     } else {
@@ -41,8 +41,8 @@ const SignIn = () => {
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          email: signInList.email,
-          password: signInList.password,
+          email: signInData.email,
+          password: signInData.password,
         }),
       },
     );
