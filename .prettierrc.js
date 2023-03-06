@@ -18,5 +18,5 @@ module.exports = {
     '^styles/*',
     '^types/*',
   ],
-  mportOrderSortSpecifiers: true,
+  importOrderSortSpecifiers: true,
 };

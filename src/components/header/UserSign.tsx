@@ -6,7 +6,7 @@ const UserSign = () => {
   return (
     <UserBox>
       <SignInUpBox>
-        <SignIn>로그인</SignIn>
+        <SignIn to="/signin">로그인</SignIn>
         <SignUp to="/signup">회원가입</SignUp>
       </SignInUpBox>
       <OtherInfo>
@@ -34,7 +34,7 @@ const SignInUpBox = styled.div`
   margin-bottom: 10px;
 `;
 
-const SignIn = styled.div`
+const SignIn = styled(Link)`
   ${flex('flex-start', 'center', 'row')};
   width: 100%;
   height: 50px;
