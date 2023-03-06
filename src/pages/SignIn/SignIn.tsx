@@ -49,18 +49,18 @@ const SignIn = () => {
 
     const { message, access_token } = await res.json();
 
-    if (message === 'SUCCESS') {
+    if (message === 'INVALID_USER')
+      return alert('이메일 또는 비밀번호가 잘못 입력되었습니다.');
+    if (message === 'KEY_ERROR')
+      return alert('이메일 또는 비밀번호를 모두 입력해주세요.');
+    if (message === 'SUCCESS' && !access_token) {
+      alert('일시적인 token 오류입니다. 관리자에게 문의하세요');
+      return navigate('/');
+    }
+    if (message === 'SUCCESS' && access_token) {
       alert('로그인에 성공했습니다. YHIM에 오신걸 환영합니다.');
-      if (access_token) {
-        setAccessToken(access_token);
-      } else {
-        alert('일시적인 token 오류입니다. 관리자에게 문의하세요');
-      }
+      setAccessToken(access_token);
       navigate('/');
-    } else if (message === 'INVALID_USER') {
-      alert('이메일 또는 비밀번호가 잘못 입력되었습니다.');
-    } else if (message === 'KEY_ERROR') {
-      alert('이메일 또는 비밀번호를 모두 입력해주세요.');
     }
   };
 
