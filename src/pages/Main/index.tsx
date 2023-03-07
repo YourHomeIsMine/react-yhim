@@ -48,37 +48,37 @@ const Main = () => {
         <Category setCategory={setCategory} setOffset={setOffset} />
       </CategoryList>
       <ContentList>
-        {productList.map((product) => (
-          <ProductInfo
-            key={product.room_id}
-            id={product.room_id}
-            room_name={product.room_name}
-            images={product.images[0]}
-            price={product.price}
-            address={product.room_address}
-            category={product.category_name}
-            guest={product.guest}
-            schedule={product.schedule}
-            // onClick={handleClick}
-          />
-        ))}
+        {' '}
+        <ContentListWrapper>
+          {productList.map((product, i) => (
+            <ProductInfo product={product} key={`product-${i}`} />
+          ))}
+        </ContentListWrapper>
       </ContentList>
     </ListContainer>
   );
 };
 
 const ListContainer = styled.div`
-  ${flex('center', 'center', 'column')};
+  ${flex('', '', 'column')};
+  height: 100%;
   padding: 60px 0px;
-  margin-top: 100px;
 `;
 const CategoryList = styled.div`
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 `;
 const ContentList = styled.div`
-  ${flex('center', 'center')};
+  ${flex('center', '')};
   flex-wrap: wrap;
-  margin-top: 120px;
+  padding: 100px 0;
+`;
+const ContentListWrapper = styled.div`
+  ${flex('', '')};
+  max-width: 1440px;
+  flex-wrap: wrap;
 `;
 
 export default Main;

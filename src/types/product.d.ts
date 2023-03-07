@@ -3,7 +3,7 @@ type ProductType = {
   room_name: string;
   images: string;
   price: number;
-  address: string;
+  room_address: string;
   category: string;
   guest: number;
   schedule: string;

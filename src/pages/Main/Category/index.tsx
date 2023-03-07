@@ -65,6 +65,7 @@ const CategoryName = styled.div`
   margin-top: 20px;
   ${font(18, 500)};
   color: ${colors.GRAY};
+  white-space: nowrap;
 `;
 
 const FilterImage = styled.img`

@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 import { colors, flex, font } from 'styles';
 
-const Card = (props: ProductType) => {
-  const { id, room_name, images, price, address, category, guest, schedule } =
-    props;
-
+interface ProductProps {
+  product: ProductType;
+}
+const ProductInfo = ({ product }: ProductProps) => {
+  const { images, room_name, room_address, schedule, price, id } = product;
   return (
-    <ContentContainer>
+    <ContentContainer key={id}>
       <ProductLikeImg alt="heart" src="../images/heart.png"></ProductLikeImg>
-      <ContentImage src={images}></ContentImage>
+      <ContentImage src={images[0]}></ContentImage>
       <ContentInfo>
         <ProductName>{room_name}</ProductName>
-        <ProductInfo>{address}</ProductInfo>
-        <ProductInfo>{schedule}</ProductInfo>
+        <ProductDetail>{room_address}</ProductDetail>
+        <ProductDetail>{schedule}</ProductDetail>
         <ProductPrice>
           ₩{Number(price).toLocaleString()} <span>/박</span>
         </ProductPrice>
@@ -44,7 +45,7 @@ const ProductName = styled.div`
   color:${colors.BLACK};
 `;
 
-const ProductInfo = styled.div`
+const ProductDetail = styled.div`
   padding: 10px 0px 10px 0px;
   ${font(18, 500, 5)}};
   color:${colors.GRAY};
@@ -64,4 +65,4 @@ const ProductLikeImg = styled.img`
   top: 50px;
   left: 85%;
 `;
-export default Card;
+export default ProductInfo;
