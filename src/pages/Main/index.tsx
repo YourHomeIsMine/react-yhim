@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
-import Card from './ProductInfo';
 import { flex } from 'styles';
 import Category from './Category';
+import ProductInfo from './ProductInfo';
 
 const Main = () => {
   const [productList, setProductList] = useState<any[]>([]);
@@ -49,7 +49,7 @@ const Main = () => {
       </CategoryList>
       <ContentList>
         {productList.map((product) => (
-          <Card
+          <ProductInfo
             key={product.room_id}
             id={product.room_id}
             room_name={product.room_name}
@@ -59,7 +59,7 @@ const Main = () => {
             category={product.category_name}
             guest={product.guest}
             schedule={product.schedule}
-            // handleClick={handleClick}
+            // onClick={handleClick}
           />
         ))}
       </ContentList>
@@ -70,6 +70,7 @@ const Main = () => {
 const ListContainer = styled.div`
   ${flex('center', 'center', 'column')};
   padding: 60px 0px;
+  margin-top: 100px;
 `;
 const CategoryList = styled.div`
   width: 100%;
