@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
-import Card from './Card';
+import Card from './ProductInfo';
 import { flex } from 'styles';
 import Category from './Category';
 

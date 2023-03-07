@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colors, flex, font } from 'styles';
 
-const Card = (props: MainCardInfoTypes) => {
+const Card = (props: ProductType) => {
   const { id, room_name, images, price, address, category, guest, schedule } =
     props;
 

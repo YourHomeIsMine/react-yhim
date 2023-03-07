@@ -1,4 +1,4 @@
-type MainCardInfoTypes = {
+type ProductType = {
   id: number;
   room_name: string;
   images: string;
