@@ -38,17 +38,21 @@ const SignUp = () => {
 
     const { message } = await res.json();
 
+    if (message === 'Invalid Email!') {
+      return alert('이메일 조건에 맞지 않습니다!');
+    }
+    if (message === 'Invalid Password!') {
+      return alert('비밀번호 조건에 맞지 않습니다!');
+    }
+    if (message === 'Email Already Exists!') {
+      return alert('중복된 이메일입니다!');
+    }
+    if (message === 'KEY_ERROR') {
+      return alert('정보를 모두 입력해주세요!');
+    }
     if (message === 'User Created!') {
       alert('회원가입을 축하드립니다.');
       navigate('/');
-    } else if (message === 'Invalid Email!') {
-      alert('이메일 조건에 밎지 않습니다!');
-    } else if (message === 'Invalid Password!') {
-      alert('비밀번호 조건에 맞지 않습니다!');
-    } else if (message === 'Email Already Exists!') {
-      alert('중복된 이메일입니다!');
-    } else if (message === 'KEY_ERROR') {
-      alert('정보를 모두 입력해주세요!');
     }
   };
 
