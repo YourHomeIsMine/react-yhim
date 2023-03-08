@@ -42,13 +42,13 @@ const Main = () => {
   }, [handleScroll]);
 
   useEffect(() => {}, [productList]);
+
   return (
     <ListContainer>
       <CategoryList>
         <Category setCategory={setCategory} setOffset={setOffset} />
       </CategoryList>
       <ContentList>
-        {' '}
         <ContentListWrapper>
           {productList.map((product, i) => (
             <ProductInfo product={product} key={`product-${i}`} />

@@ -1,13 +1,20 @@
 import styled from 'styled-components';
 import { colors, flex, font } from 'styles';
+import { useNavigate } from 'react-router-dom';
 
 interface ProductProps {
   product: ProductType;
 }
 const ProductInfo = ({ product }: ProductProps) => {
-  const { images, room_name, room_address, schedule, price, id } = product;
+  const navigate = useNavigate();
+  const { images, room_name, room_address, schedule, price, room_id } = product;
+
+  const handleClick = (id: number) => {
+    navigate(`/rooms/${id}`);
+  };
+
   return (
-    <ContentContainer key={id}>
+    <ContentContainer key={room_id} onClick={() => handleClick(room_id)}>
       <ProductLikeImg alt="heart" src="../images/heart.png"></ProductLikeImg>
       <ContentImage src={images[0]}></ContentImage>
       <ContentInfo>
