@@ -29,7 +29,7 @@ const ProductLeftImg = styled.img`
   object-fit: cover;
   width: 100%;
   height: 500px;
-  padding: 10px 10px 10px 0px;
+  padding: 5px 5px 5px 0px;
   object-fit: cover;
   filter: brightness(1);
 
@@ -41,7 +41,7 @@ const ProductLeftImg = styled.img`
 const ProductRightImg = styled.img`
   width: 100%;
   height: 250px;
-  padding: 10px;
+  padding: 5px;
   filter: brightness(1);
 
   :nth-child(3) {

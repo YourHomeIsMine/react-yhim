@@ -37,8 +37,8 @@ const Header = ({ detailList }: any) => {
 };
 
 const ProductTitle = styled.div`
-  padding: 30px 0px;
-  ${font(40, 500)};
+  padding: 20px 0px;
+  ${font(30, 500)};
   color: ${colors.BLACK};
 `;
 
@@ -46,7 +46,7 @@ const ProductHeader = styled.div``;
 const ProductInfo = styled.div`
   ${flex('space-between', 'center')};
   padding: 10px 0px;
-  ${font(20, 500)};
+  ${font(17, 500)};
   color: ${colors.BLACK};
 `;
 
