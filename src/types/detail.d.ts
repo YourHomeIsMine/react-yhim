@@ -1,0 +1,22 @@
+type ProductDetailType = {
+  name: string;
+  description: string;
+  district: string;
+  neighberhood: string;
+  price: number;
+  address: string;
+  guests: number;
+  beds: number;
+  bedrooms: number;
+  baths: number;
+  latitute: number;
+  longitute: number;
+  host: string;
+  host_image: string;
+  room_images_url: string[];
+  check_in: string[];
+  room_amenities: string[];
+  check_in_time: string;
+  check_out_time: string;
+  house_rules: string[];
+};
