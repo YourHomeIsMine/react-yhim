@@ -3,11 +3,7 @@ import Header from './Header';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-interface ProductDetail {
-  productDetail?: ProductDetailType;
-}
-
-const Detail = ({ productDetail }: ProductDetail) => {
+const Detail = () => {
   const [detailList, setDetailList] = useState<ProductDetailType>({
     name: '',
     description: '',
@@ -104,18 +100,28 @@ const ProductLeftImg = styled.img`
   height: 500px;
   padding: 10px 10px 10px 0px;
   object-fit: cover;
+  filter: brightness(1);
+
+  :hover {
+    filter: brightness(0.7);
+  }
 `;
 
 const ProductRightImg = styled.img`
   width: 100%;
   height: 250px;
   padding: 10px;
+  filter: brightness(1);
 
   :nth-child(3) {
     padding-right: 0;
   }
   :last-child {
     padding-right: 0;
+  }
+
+  :hover {
+    filter: brightness(0.7);
   }
 `;
 

@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 import { colors, flex, font } from 'styles';
 
-const Header = (props: any) => {
+const Header = ({ detailList }: any) => {
+  const { name, district, neighberhood } = detailList;
+
   return (
     <ProductHeader>
-      <ProductTitle>언덕위에 위치한 빈티지 에어스트림 스위트</ProductTitle>
+      <ProductTitle>{name}</ProductTitle>
       <ProductInfo>
         <InfoDetailList>
           <InfoDetail>4.93 · 후기 210개</InfoDetail>
           <InfoDetail>|</InfoDetail>
-          <InfoDetail>Calaca, Calabarzon, 필리핀</InfoDetail>
+          <InfoDetail>
+            {neighberhood} {district}
+          </InfoDetail>
         </InfoDetailList>
         <InfoImageIcon>
           <InfoIconList>
