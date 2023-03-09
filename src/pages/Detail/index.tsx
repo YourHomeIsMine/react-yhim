@@ -40,10 +40,6 @@ const Detail = ({ productDetail }: ProductDetail) => {
       });
   }, [params.id]);
 
-  // useEffect(() => {
-  //   console.log(room_images_url);
-  // }, [detailList]);
-
   const {
     name,
     description,
@@ -70,7 +66,7 @@ const Detail = ({ productDetail }: ProductDetail) => {
   return (
     <DetailContainer>
       <DetailWrapper>
-        <Header />
+        <Header detailList={detailList} />
         <ProductImageList>
           <ProductLeftImg alt="room-left-image" src={room_images_url[0]} />
           <ProductRightImg alt="room-left-image" src={room_images_url[1]} />
@@ -83,10 +79,7 @@ const Detail = ({ productDetail }: ProductDetail) => {
   );
 };
 
-const DetailContainer = styled.div`
-  background-color: green;
-  width: 100%;
-`;
+const DetailContainer = styled.div``;
 
 const DetailWrapper = styled.div`
   margin: 0px 20px;
@@ -97,26 +90,26 @@ const ProductImageList = styled.div`
   grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   place-items: center;
-  margin-top: 20px;
   align-items: center;
-  border-radius: 10px;
   width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
 `;
 
 const ProductLeftImg = styled.img`
   grid-row-start: 1;
   grid-row-end: 3;
   object-fit: cover;
-  padding: 10px 10px 10px 0px;
   width: 100%;
-  height: 600px;
+  height: 500px;
+  padding: 10px 10px 10px 0px;
   object-fit: cover;
 `;
 
 const ProductRightImg = styled.img`
-  padding: 10px;
   width: 100%;
-  height: 300px;
+  height: 250px;
+  padding: 10px;
 
   :nth-child(3) {
     padding-right: 0;

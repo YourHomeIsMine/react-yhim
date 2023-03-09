@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { colors, flex, font } from '../../../styles';
+import { colors, flex, font } from 'styles';
 
-const Header = () => {
+const Header = (props: any) => {
   return (
     <ProductHeader>
       <ProductTitle>언덕위에 위치한 빈티지 에어스트림 스위트</ProductTitle>
