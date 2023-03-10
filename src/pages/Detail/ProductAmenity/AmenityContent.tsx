@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { flex, font } from 'styles';
 
 const AmenityContent = ({ data }: any) => {
   const { amenity_id, amenity_icon_url, amenity_name } = data;
@@ -12,21 +13,20 @@ const AmenityContent = ({ data }: any) => {
 };
 
 const AmenityItem = styled.div`
-  display: flex;
-  align-items: center;
-  width: 50%;
+  ${flex('', 'center')}
+  width: 100%;
   padding-bottom: 16px;
 `;
 
 const AmenityIcon = styled.img`
   width: 24px;
   height: 24px;
-  margin-right: 8px;
+  margin-right: 15px;
 `;
 
 const AmenityName = styled.p`
   margin-top: 4px;
-  font-size: 18px;
+  ${font(18, 500)};
 `;
 
 export default AmenityContent;
