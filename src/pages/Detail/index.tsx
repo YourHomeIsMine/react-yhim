@@ -3,6 +3,8 @@ import Header from './Header';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductImage from './ProductImage';
+import ProductInfo from './ProductDetailInfo';
+import { colors, font } from 'styles';
 
 const Detail = () => {
   const [detailList, setDetailList] = useState<ProductDetailType>({
@@ -26,6 +28,7 @@ const Detail = () => {
     check_in_time: '',
     check_out_time: '',
     house_rules: [],
+    category: '',
   });
   const params = useParams();
 
@@ -58,6 +61,7 @@ const Detail = () => {
     check_in_time,
     check_out_time,
     house_rules,
+    category,
   } = detailList;
 
   return (
@@ -65,14 +69,33 @@ const Detail = () => {
       <DetailWrapper>
         <Header detailList={detailList} />
         <ProductImage image={room_images_url}></ProductImage>
+        <ProductInfo detailList={detailList} />
+        <ProductDescription>
+          <DescriptionWrapper>{description}</DescriptionWrapper>
+        </ProductDescription>
       </DetailWrapper>
     </DetailContainer>
   );
 };
 
-const DetailContainer = styled.div``;
+const DetailContainer = styled.div`
+  padding-top: 40%;
+  padding-bottom: 170px;
+`;
 
 const DetailWrapper = styled.div`
   margin: 0px 20px;
 `;
+
+const ProductDescription = styled.div`
+  margin-top: 40px;
+`;
+
+const DescriptionWrapper = styled.div`
+  padding-bottom: 40px;
+  border-bottom: 1px solid ${colors.MEDIUMGRAY};
+  ${font(18, 500, 22)};
+  color: ${colors.BLACK};
+`;
+
 export default Detail;

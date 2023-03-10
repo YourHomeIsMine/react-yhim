@@ -19,4 +19,5 @@ type ProductDetailType = {
   check_in_time: string;
   check_out_time: string;
   house_rules: string[];
+  category: string;
 };
