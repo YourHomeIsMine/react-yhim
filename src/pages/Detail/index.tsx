@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import ProductImage from './ProductImage';
 import ProductInfo from './ProductDetailInfo';
 import { colors, font } from 'styles';
+import ProductAmenity from './ProductAmenity';
 
 const Detail = () => {
   const [detailList, setDetailList] = useState<ProductDetailType>({
@@ -73,6 +74,7 @@ const Detail = () => {
         <ProductDescription>
           <DescriptionWrapper>{description}</DescriptionWrapper>
         </ProductDescription>
+        <ProductAmenity room_amenities={room_amenities} />
       </DetailWrapper>
     </DetailContainer>
   );
