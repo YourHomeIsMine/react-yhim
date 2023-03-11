@@ -13,6 +13,7 @@ type ProductDetailType = {
   longitute: number;
   host: string;
   host_image: string;
+  host_created: string;
   room_images_url: string[];
   check_in: string[];
   room_amenities: string[];

@@ -6,6 +6,7 @@ import ProductImage from './ProductImage';
 import ProductInfo from './ProductDetailInfo';
 import { colors, font } from 'styles';
 import ProductAmenity from './ProductAmenity';
+import HostDetailInfo from './HostDetailInfo';
 
 const Detail = () => {
   const [detailList, setDetailList] = useState<ProductDetailType>({
@@ -23,6 +24,7 @@ const Detail = () => {
     longitute: 0.0,
     host: '',
     host_image: '',
+    host_created: '',
     room_images_url: [],
     check_in: [],
     room_amenities: [],
@@ -56,6 +58,7 @@ const Detail = () => {
     longitute,
     host,
     host_image,
+    host_created,
     room_images_url,
     check_in,
     room_amenities,
@@ -75,6 +78,7 @@ const Detail = () => {
           <DescriptionWrapper>{description}</DescriptionWrapper>
         </ProductDescription>
         <ProductAmenity room_amenities={room_amenities} />
+        <HostDetailInfo detailList={detailList} />
       </DetailWrapper>
     </DetailContainer>
   );

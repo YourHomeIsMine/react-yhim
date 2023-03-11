@@ -24,6 +24,8 @@ const ProductAmenity = (data: any) => {
 const AmenityContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding-bottom: 25px;
+  border-bottom: 1px solid ${colors.MEDIUMGRAY};
 `;
 
 const AmenityTitle = styled.div`
