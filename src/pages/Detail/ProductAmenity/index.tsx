@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import AmenityContent from './AmenityContent';
-import { font, colors } from 'styles';
+import { font } from 'styles';
 
 interface AmenityProps {
   amenity: AmenityType;
@@ -14,9 +14,6 @@ const ProductAmenity = (data: any) => {
       {room_amenities.slice(0, 10).map((data: AmenityProps, i: number) => (
         <AmenityContent key={i} data={data}></AmenityContent>
       ))}
-      <AmenityTotalList>
-        편의시설 {room_amenities.length}개 모두 보기
-      </AmenityTotalList>
     </AmenityContainer>
   );
 };
@@ -33,16 +30,6 @@ const AmenityTitle = styled.div`
   padding: 10px 0px 10px 0px;
   margin: 20px 0px 20px 0px;
   ${font(20, 500)};
-`;
-
-const AmenityTotalList = styled.div`
-  width: 80%;
-  padding: 10px;
-  margin-top: 15px;
-  border: 1px solid ${colors.BLACK};
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
 `;
 
 export default ProductAmenity;
