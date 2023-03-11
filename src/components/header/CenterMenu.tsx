@@ -15,7 +15,7 @@ const CenterMenu = () => {
 
 const Container = styled.div`
   ${flex('center', 'center')};
-  width: 30%;
+  min-width: 300px;
   height: 40px;
   margin-left: 100px;
   border: 1px solid ${colors.MEDIUMGRAY};

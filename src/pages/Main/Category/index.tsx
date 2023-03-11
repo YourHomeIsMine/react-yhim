@@ -39,31 +39,28 @@ const Category = (props: any) => {
 };
 
 const CategoryList = styled.div`
-  ${flex('center', 'center')};
-  position: fixed;
-  top: 70px;
-  width: 100%;
+  ${flex('space-between', 'center')};
+  padding: 20px 0;
   background-color: ${colors.WHITE};
-  z-index: 90;
 `;
 
 const CategoryRoomFilter = styled.div`
   ${flex('', 'center', 'column')};
-  margin: 10px 25px 0px 25px;
-  padding: 15px;
   cursor: pointer;
 
   :hover {
     border-bottom: 2px solid ${colors.GRAY};
   }
 `;
+
 const CategoryImage = styled.img`
   width: 35px;
   height: 35px;
 `;
+
 const CategoryName = styled.div`
   margin-top: 20px;
-  ${font(18, 500)};
+  ${font(16, 500)};
   color: ${colors.GRAY};
   white-space: nowrap;
 `;
@@ -81,7 +78,7 @@ const CategoryFilter = styled.div`
   padding: 0px 20px;
   border: 1px solid ${colors.GRAY};
   border-radius: 10px;
-  ${font(20, 500)};
+  ${font(16, 500)};
   color: ${colors.GRAY};
   cursor: pointer;
 `;

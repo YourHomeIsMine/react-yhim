@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import AmenityContent from './AmenityContent';
-import { font } from 'styles';
+import { font, colors } from 'styles';
 
 interface AmenityProps {
   amenity: AmenityType;

@@ -1,6 +1,6 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { colors, flex, font } from 'styles';
-import { useNavigate } from 'react-router-dom';
 
 interface ProductProps {
   product: ProductType;
@@ -14,62 +14,73 @@ const ProductInfo = ({ product }: ProductProps) => {
   };
 
   return (
-    <ContentContainer key={room_id} onClick={() => handleClick(room_id)}>
-      <ProductLikeImg alt="heart" src="../images/heart.png"></ProductLikeImg>
-      <ContentImage src={images[0]}></ContentImage>
-      <ContentInfo>
-        <ProductName>{room_name}</ProductName>
-        <ProductDetail>{room_address}</ProductDetail>
-        <ProductDetail>{schedule}</ProductDetail>
-        <ProductPrice>
+    <Container onClick={() => handleClick(room_id)}>
+      <ImageBox>
+        <LikeImg alt="heart" src="../images/heart.png" />
+        <ProductImg alt="product" src={images[0]} />
+      </ImageBox>
+      <InfoBox>
+        <Name>{room_name}</Name>
+        <Detail>{room_address}</Detail>
+        <Detail>{schedule}</Detail>
+        <Price>
           ₩{Number(price).toLocaleString()} <span>/박</span>
-        </ProductPrice>
-      </ContentInfo>
-    </ContentContainer>
+        </Price>
+      </InfoBox>
+    </Container>
   );
 };
 
-const ContentContainer = styled.div`
+const Container = styled.div`
   ${flex('center', '', 'column')};
   padding: 10px 15px 25px 15px;
 `;
 
-const ContentImage = styled.img`
+const InfoBox = styled.div`
+  margin-top: 10px;
+`;
+
+const Name = styled.div`
+  margin-top: 10px;
+  padding: 10px 0px 15px 0px;
+  ${font(20, 500)};
+  color: ${colors.BLACK};
+`;
+
+const Detail = styled.div`
+  padding: 10px 0px 10px 0px;
+  ${font(18, 500, 5)};
+  color: ${colors.GRAY};
+`;
+
+const Price = styled.div`
+  margin-top: 10px;
+  padding: 10px 0px 10px 0px;
+  ${font(20, 500)};
+  color: ${colors.BLACK};
+`;
+
+const ImageBox = styled.div`
+  position: relative;
   width: 330px;
   height: 330px;
+  border-radius: 20px;
+`;
+
+const ProductImg = styled.img`
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 20px;
 `;
 
-const ContentInfo = styled.div`
-  margin-top: 10px;
-`;
-
-const ProductName = styled.div`
-  margin-top: 10px;
-  padding: 10px 0px 15px 0px;
-  ${font(20, 500)}};
-  color:${colors.BLACK};
-`;
-
-const ProductDetail = styled.div`
-  padding: 10px 0px 10px 0px;
-  ${font(18, 500, 5)}};
-  color:${colors.GRAY};
-`;
-
-const ProductPrice = styled.div`
-  margin-top: 10px;
-  padding: 10px 0px 10px 0px;
-  ${font(20, 500)}};
-  color:${colors.BLACK};
-`;
-
-const ProductLikeImg = styled.img`
-  position: relative;
+const LikeImg = styled.img`
+  position: absolute;
+  top: 20px;
+  right: 20px;
   width: 25px;
   height: 25px;
-  top: 50px;
-  left: 85%;
+  z-index: 1;
 `;
+
 export default ProductInfo;

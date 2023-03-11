@@ -20,6 +20,7 @@ const Header = () => {
 };
 
 const Container = styled.header`
+  ${flex('', 'center', 'column')}
   position: fixed;
   top: 0;
   width: 100%;
@@ -30,6 +31,7 @@ const Container = styled.header`
 
 const Contents = styled.div`
   ${flex('space-between', 'center')};
+  width: 100%;
   padding: 10px 0;
 `;
 
