@@ -38,6 +38,7 @@ const Container = styled.div`
 
 const InfoBox = styled.div`
   margin-top: 10px;
+  cursor: pointer;
 `;
 
 const Name = styled.div`
@@ -65,6 +66,7 @@ const ImageBox = styled.div`
   width: 330px;
   height: 330px;
   border-radius: 20px;
+  cursor: pointer;
 `;
 
 const ProductImg = styled.img`

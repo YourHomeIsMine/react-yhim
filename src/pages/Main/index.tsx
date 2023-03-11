@@ -66,21 +66,20 @@ const ListContainer = styled.div`
 `;
 
 const CategoryList = styled.div`
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: lightblue;
+  position: fixed;
+  top: 81px;
+  width: 85%;
+  z-index: 10;
 `;
 
 const ContentList = styled.div`
   width: 100%;
-
   padding: 100px 0;
 `;
 
 const ContentListWrap = styled.div`
   ${flex('', '')};
-  max-width: 1080px;
+  max-width: 1440px;
   flex-wrap: wrap;
 `;
 

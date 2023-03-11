@@ -40,12 +40,13 @@ const Category = (props: any) => {
 
 const CategoryList = styled.div`
   ${flex('space-between', 'center')};
-  padding: 20px 0;
+
   background-color: ${colors.WHITE};
 `;
 
 const CategoryRoomFilter = styled.div`
   ${flex('', 'center', 'column')};
+  padding: 20px;
   cursor: pointer;
 
   :hover {

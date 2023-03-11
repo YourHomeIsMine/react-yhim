@@ -8,8 +8,7 @@ function WrapperLayout({ children }: { children: React.ReactNode }) {
 export default WrapperLayout;
 
 const Container = styled.div`
-  ${flex('', 'center', 'column')};
+  ${flex('', '', 'column')};
   width: 100%;
   max-width: 1440px;
-  padding: 0 20px;
 `;
