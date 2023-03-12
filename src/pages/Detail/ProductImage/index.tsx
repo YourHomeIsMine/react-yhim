@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 
-const ProductImage = ({ image }: any) => {
+interface RoomImageProps {
+  room_images_url: RoomImagesType;
+}
+
+const ProductImage = ({ data }: RoomImageProps) => {
+  const { room_images_url } = data;
+
   return (
     <ProductImageList>
-      <ProductLeftImg alt="room-left-image" src={image[0]} />
-      <ProductRightImg alt="room-left-image" src={image[1]} />
-      <ProductRightImg alt="room-left-image" src={image[2]} />
-      <ProductRightImg alt="room-left-image" src={image[3]} />
-      <ProductRightImg alt="room-left-image" src={image[4]} />
+      <ProductLeftImg alt="room-left-image" src={room_images_url[0]} />
+      <ProductRightImg alt="room-left-image" src={room_images_url[1]} />
+      <ProductRightImg alt="room-left-image" src={room_images_url[2]} />
+      <ProductRightImg alt="room-left-image" src={room_images_url[3]} />
+      <ProductRightImg alt="room-left-image" src={room_images_url[4]} />
     </ProductImageList>
   );
 };

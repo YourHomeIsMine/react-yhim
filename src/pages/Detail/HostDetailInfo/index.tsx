@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { colors, flex, font } from 'styles';
 
-const HostDetailInfo = ({ detailList }: any) => {
+interface HostDetailProps {
+  detailList: HostDetailType;
+}
+
+const HostDetailInfo = ({ detailList }: HostDetailProps) => {
   const { host_image, host, host_created } = detailList;
 
   return (

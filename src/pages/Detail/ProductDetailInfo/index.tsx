@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { colors, flex, font } from 'styles';
 
-const ProductDetailInfo = ({ detailList }: any) => {
+interface ProductDetailProps {
+  detailList: ProductDetailType;
+}
+
+const ProductDetailInfo = ({ detailList }: ProductDetailProps) => {
   const {
     host,
     category,

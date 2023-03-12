@@ -8,7 +8,6 @@ interface ProductAmenityProps {
 
 const ProductAmenity = (data: ProductAmenityProps) => {
   const { room_amenities } = data;
-  console.log(room_amenities);
 
   return (
     <AmenityContainer>

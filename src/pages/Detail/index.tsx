@@ -71,7 +71,7 @@ const Detail = () => {
   return (
     <DetailContainer>
       <Header detailList={detailList} />
-      <ProductImage image={room_images_url} />
+      <ProductImage room_images_url={room_images_url} />
       <ProductInfo detailList={detailList} />
       <ProductDescription>{description}</ProductDescription>
       <ProductAmenity room_amenities={room_amenities} />
