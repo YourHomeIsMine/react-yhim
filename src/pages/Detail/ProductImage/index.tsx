@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 
 interface RoomImageProps {
-  room_images_url: RoomImagesType;
+  room_images_url: string[];
 }
 
-const ProductImage = ({ data }: RoomImageProps) => {
-  const { room_images_url } = data;
-  console.log(data.room_images_url);
-
+const ProductImage = ({ room_images_url }: RoomImageProps) => {
   return (
     <ProductImageList>
       <ProductLeftImg alt="room-left-image" src={room_images_url[0]} />
