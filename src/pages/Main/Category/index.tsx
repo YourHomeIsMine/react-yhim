@@ -31,7 +31,7 @@ const Category = (props: any) => {
         <FilterImage
           alt="filter"
           src="https://cdn-icons-png.flaticon.com/512/8017/8017777.png"
-        ></FilterImage>
+        />
         <span>필터</span>
       </CategoryFilter>
     </CategoryList>

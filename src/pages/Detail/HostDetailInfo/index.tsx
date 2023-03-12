@@ -7,7 +7,7 @@ const HostDetailInfo = ({ detailList }: any) => {
   return (
     <HostContainer>
       <HostInfo>
-        <HostImage src={host_image}></HostImage>
+        <HostImage alt="host_image" src={host_image} />
         <HostDetail>
           <HostName>호스트 : {host}</HostName>
           <HostSignUpDate>

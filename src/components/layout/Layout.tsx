@@ -9,9 +9,11 @@ const Layout = () => {
   return (
     <Container>
       <Header />
-      <WrapperLayout>
-        <Outlet />
-      </WrapperLayout>
+      <Body>
+        <WrapperLayout>
+          <Outlet />
+        </WrapperLayout>
+      </Body>
       <Footer />
     </Container>
   );
@@ -20,6 +22,10 @@ const Layout = () => {
 const Container = styled.div`
   ${flex('', 'center', 'column')};
   height: 100vh;
+`;
+
+const Body = styled.div`
+  padding: 120px 0px;
 `;
 
 export default Layout;

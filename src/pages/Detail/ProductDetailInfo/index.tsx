@@ -25,7 +25,7 @@ const ProductDetailInfo = ({ detailList }: any) => {
             {baths}개
           </HostAmenityInfo>
         </div>
-        <HostImage src={host_image}></HostImage>
+        <HostImage src={host_image} />
       </HostInfo>
       <ProductEtcInfo>
         <ProductDesignInfo>

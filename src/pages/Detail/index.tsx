@@ -70,35 +70,20 @@ const Detail = () => {
 
   return (
     <DetailContainer>
-      <DetailWrapper>
-        <Header detailList={detailList} />
-        <ProductImage image={room_images_url}></ProductImage>
-        <ProductInfo detailList={detailList} />
-        <ProductDescription>
-          <DescriptionWrapper>{description}</DescriptionWrapper>
-        </ProductDescription>
-        <ProductAmenity room_amenities={room_amenities} />
-        <HostDetailInfo detailList={detailList} />
-      </DetailWrapper>
+      <Header detailList={detailList} />
+      <ProductImage image={room_images_url} />
+      <ProductInfo detailList={detailList} />
+      <ProductDescription>{description}</ProductDescription>
+      <ProductAmenity room_amenities={room_amenities} />
+      <HostDetailInfo detailList={detailList} />
     </DetailContainer>
   );
 };
 
-const DetailContainer = styled.div`
-  padding-top: 40%;
-  padding-bottom: 170px;
-`;
-
-const DetailWrapper = styled.div`
-  margin: 0px 20px;
-`;
+const DetailContainer = styled.div``;
 
 const ProductDescription = styled.div`
-  margin-top: 40px;
-`;
-
-const DescriptionWrapper = styled.div`
-  padding-bottom: 40px;
+  padding: 40px 0;
   border-bottom: 1px solid ${colors.MEDIUMGRAY};
   ${font(18, 500, 22)};
   color: ${colors.BLACK};

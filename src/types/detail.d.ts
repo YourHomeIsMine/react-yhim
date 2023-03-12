@@ -16,7 +16,7 @@ type ProductDetailType = {
   host_created: string;
   room_images_url: string[];
   check_in: string[];
-  room_amenities: string[];
+  room_amenities: AmenityType[];
   check_in_time: string;
   check_out_time: string;
   house_rules: string[];

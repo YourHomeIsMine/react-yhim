@@ -2,17 +2,19 @@ import styled from 'styled-components';
 import AmenityContent from './AmenityContent';
 import { font, colors } from 'styles';
 
-interface AmenityProps {
-  amenity: AmenityType;
+interface ProductAmenityProps {
+  room_amenities: AmenityType[];
 }
-const ProductAmenity = (data: any) => {
+
+const ProductAmenity = (data: ProductAmenityProps) => {
   const { room_amenities } = data;
+  console.log(room_amenities);
 
   return (
     <AmenityContainer>
       <AmenityTitle>숙소 편의시설</AmenityTitle>
-      {room_amenities.slice(0, 10).map((data: AmenityProps, i: number) => (
-        <AmenityContent key={i} data={data}></AmenityContent>
+      {room_amenities.slice(0, 10).map((data, i) => (
+        <AmenityContent key={`amenity-${i}}`} data={data} />
       ))}
     </AmenityContainer>
   );

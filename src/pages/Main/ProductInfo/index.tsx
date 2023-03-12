@@ -9,12 +9,12 @@ const ProductInfo = ({ product }: ProductProps) => {
   const navigate = useNavigate();
   const { images, room_name, room_address, schedule, price, room_id } = product;
 
-  const handleClick = (id: number) => {
+  const goDetailPage = (id: number) => {
     navigate(`/rooms/${id}`);
   };
 
   return (
-    <Container onClick={() => handleClick(room_id)}>
+    <Container onClick={() => goDetailPage(room_id)}>
       <ImageBox>
         <LikeImg alt="heart" src="../images/heart.png" />
         <ProductImg alt="product" src={images[0]} />

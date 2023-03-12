@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { flex, font } from 'styles';
 
-const AmenityContent = ({ data }: any) => {
+interface AmenityContentProps {
+  data: AmenityType;
+}
+
+const AmenityContent = ({ data }: AmenityContentProps) => {
   const { amenity_id, amenity_icon_url, amenity_name } = data;
 
   return (
