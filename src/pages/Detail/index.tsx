@@ -7,6 +7,7 @@ import ProductInfo from './ProductDetailInfo';
 import { colors, font } from 'styles';
 import ProductAmenity from './ProductAmenity';
 import HostDetailInfo from './HostDetailInfo';
+import Notice from './Notice';
 
 const Detail = () => {
   const [detailList, setDetailList] = useState<ProductDetailType>({
@@ -76,6 +77,7 @@ const Detail = () => {
       <ProductDescription>{description}</ProductDescription>
       <ProductAmenity room_amenities={room_amenities} />
       <HostDetailInfo detailList={detailList} />
+      <Notice noticeList={house_rules} />
     </DetailContainer>
   );
 };

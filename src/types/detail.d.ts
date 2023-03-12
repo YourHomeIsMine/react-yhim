@@ -19,7 +19,7 @@ type ProductDetailType = {
   room_amenities: AmenityType[];
   check_in_time: string;
   check_out_time: string;
-  house_rules: string[];
+  house_rules: NoticeType[];
   category: string;
 };
 
@@ -34,3 +34,5 @@ type AmenityType = {
   amenity_name: string;
   amenity_icon_url: string;
 };
+
+type NoticeType = { room_rules: string; rules_icon_url: string };
