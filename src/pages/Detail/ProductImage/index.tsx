@@ -6,6 +6,7 @@ interface RoomImageProps {
 
 const ProductImage = ({ data }: RoomImageProps) => {
   const { room_images_url } = data;
+  console.log(data.room_images_url);
 
   return (
     <ProductImageList>

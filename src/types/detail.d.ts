@@ -14,7 +14,7 @@ type ProductDetailType = {
   host: string;
   host_image: string;
   host_created: string;
-  room_images_url: RoomImagesType[];
+  room_images_url: string[];
   check_in: string[];
   room_amenities: AmenityType[];
   check_in_time: string;
@@ -24,7 +24,7 @@ type ProductDetailType = {
 };
 
 type RoomImagesType = {
-  room_images_url: string;
+  room_images_url: string[];
 };
 
 type HostDetailType = {
