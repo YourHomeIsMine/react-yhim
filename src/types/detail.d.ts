@@ -23,10 +23,6 @@ type ProductDetailType = {
   category: string;
 };
 
-type RoomImagesType = {
-  room_images_url: string[];
-};
-
 type HostDetailType = {
   host_image: string;
   host: string;

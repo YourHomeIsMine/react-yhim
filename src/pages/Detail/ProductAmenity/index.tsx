@@ -15,6 +15,7 @@ const ProductAmenity = (data: ProductAmenityProps) => {
       {room_amenities.slice(0, 10).map((data, i) => (
         <AmenityContent key={`amenity-${i}}`} data={data} />
       ))}
+      <TotalListBtn>편의시설 45개 모두 보기</TotalListBtn>
     </AmenityContainer>
   );
 };
@@ -31,6 +32,20 @@ const AmenityTitle = styled.div`
   padding: 10px 0px 10px 0px;
   margin: 20px 0px 20px 0px;
   ${font(20, 500)};
+`;
+
+const TotalListBtn = styled.button`
+  width: 40%;
+  margin: 20px 0px;
+  padding: 20px 0px;
+  border: 1px solid ${colors.BLACK};
+  border-radius: 10px;
+  color: ${colors.BLACK};
+  ${font(18, 400)}
+
+  :hover {
+    background-color: ${colors.LIGHTGRAY};
+  }
 `;
 
 export default ProductAmenity;
