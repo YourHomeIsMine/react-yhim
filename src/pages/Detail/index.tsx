@@ -1,13 +1,14 @@
-import styled from 'styled-components';
-import Header from './Header';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ProductImage from './ProductImage';
-import ProductInfo from './ProductDetailInfo';
-import { colors, font } from 'styles';
-import ProductAmenity from './ProductAmenity';
+import styled from 'styled-components';
+import Header from './Header';
 import HostDetailInfo from './HostDetailInfo';
+import Map from './Map';
 import Notice from './Notice';
+import ProductAmenity from './ProductAmenity';
+import ProductInfo from './ProductDetailInfo';
+import ProductImage from './ProductImage';
+import { colors, font } from 'styles';
 
 const Detail = () => {
   const [detailList, setDetailList] = useState<ProductDetailType>({
@@ -76,6 +77,7 @@ const Detail = () => {
       <ProductInfo detailList={detailList} />
       <ProductDescription>{description}</ProductDescription>
       <ProductAmenity room_amenities={room_amenities} />
+      <Map detailList={detailList} />
       <HostDetailInfo detailList={detailList} />
       <Notice noticeList={house_rules} />
     </DetailContainer>
