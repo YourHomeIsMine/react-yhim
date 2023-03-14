@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import Calendar from './Calendar';
 import Header from './Header';
 import HostDetailInfo from './HostDetailInfo';
 import Map from './Map';
@@ -9,6 +8,7 @@ import Notice from './Notice';
 import ProductAmenity from './ProductAmenity';
 import ProductInfo from './ProductDetailInfo';
 import ProductImage from './ProductImage';
+import Reservation from './Reservation';
 import { colors, flex, font } from 'styles';
 
 const Detail = () => {
@@ -81,9 +81,9 @@ const Detail = () => {
           <ProductDescription>{description}</ProductDescription>
           <ProductAmenity room_amenities={room_amenities} />
         </ProductContainer>
-        <CalendarContainer>
-          <Calendar />
-        </CalendarContainer>
+        <ReservationContainer>
+          <Reservation data={price} />
+        </ReservationContainer>
       </DivideContainer>
       <Map detailList={detailList} />
       <HostDetailInfo detailList={detailList} />
@@ -110,9 +110,8 @@ const ProductContainer = styled.div`
   width: 65%;
 `;
 
-const CalendarContainer = styled.div`
+const ReservationContainer = styled.div`
   margin-left: 20px;
-  position: sticky;
   width: 35%;
 `;
 
