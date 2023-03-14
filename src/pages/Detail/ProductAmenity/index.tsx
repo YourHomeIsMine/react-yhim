@@ -23,7 +23,7 @@ const ProductAmenity = (data: ProductAmenityProps) => {
 const AmenityContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-bottom: 25px;
+  padding: 10px 0px 25px 0px;
 `;
 
 const AmenityTitle = styled.div`

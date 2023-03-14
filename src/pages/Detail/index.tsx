@@ -80,6 +80,7 @@ const Detail = () => {
           <ProductInfo detailList={detailList} />
           <ProductDescription>{description}</ProductDescription>
           <ProductAmenity room_amenities={room_amenities} />
+          <Notice noticeList={house_rules} />
         </ProductContainer>
         <ReservationContainer>
           <Reservation data={price} />
@@ -87,7 +88,6 @@ const Detail = () => {
       </DivideContainer>
       <Map detailList={detailList} />
       <HostDetailInfo detailList={detailList} />
-      <Notice noticeList={house_rules} />
     </DetailContainer>
   );
 };

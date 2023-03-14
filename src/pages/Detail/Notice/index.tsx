@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import NoticeContent from './NoticeContent';
-import { font } from 'styles';
+import { colors, font } from 'styles';
 
 interface NoticeProps {
   noticeList: NoticeType[];
@@ -19,7 +19,10 @@ const Notice = (data: NoticeProps) => {
   );
 };
 
-const NoticeContainer = styled.div``;
+const NoticeContainer = styled.div`
+  padding-top: 30px;
+  border-top: 1px solid ${colors.MEDIUMGRAY};
+`;
 
 const NoticeTitle = styled.div`
   ${font(20, 500, 22)};

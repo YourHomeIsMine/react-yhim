@@ -87,8 +87,6 @@ const HostDetailInfo = ({ detailList }: HostDetailProps) => {
 const HostContainer = styled.div`
   ${flex('', '')};
   margin: 30px 0px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid ${colors.MEDIUMGRAY};
 `;
 
 const HostInfoList = styled.div`
