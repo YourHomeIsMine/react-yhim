@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import Calendar from './Calendar';
 import Header from './Header';
 import HostDetailInfo from './HostDetailInfo';
 import Map from './Map';
@@ -72,6 +73,7 @@ const Detail = () => {
 
   return (
     <DetailContainer>
+      <Calendar />
       <Header detailList={detailList} />
       <ProductImage room_images_url={room_images_url} />
       <ProductInfo detailList={detailList} />
