@@ -64,7 +64,8 @@ const Map = ({ detailList }: ProductDetailProps) => {
 
 const Container = styled.div`
   margin: 20px 0px;
-  padding: 10px 0px 50px 0px;
+  padding: 30px 0px 50px 0px;
+  border-top: 1px solid ${colors.MEDIUMGRAY};
   border-bottom: 1px solid ${colors.MEDIUMGRAY};
 `;
 

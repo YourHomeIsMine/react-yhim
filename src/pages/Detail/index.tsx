@@ -9,7 +9,7 @@ import Notice from './Notice';
 import ProductAmenity from './ProductAmenity';
 import ProductInfo from './ProductDetailInfo';
 import ProductImage from './ProductImage';
-import { colors, font } from 'styles';
+import { colors, flex, font } from 'styles';
 
 const Detail = () => {
   const [detailList, setDetailList] = useState<ProductDetailType>({
@@ -73,12 +73,18 @@ const Detail = () => {
 
   return (
     <DetailContainer>
-      <Calendar />
       <Header detailList={detailList} />
       <ProductImage room_images_url={room_images_url} />
-      <ProductInfo detailList={detailList} />
-      <ProductDescription>{description}</ProductDescription>
-      <ProductAmenity room_amenities={room_amenities} />
+      <DivideContainer>
+        <ProductContainer>
+          <ProductInfo detailList={detailList} />
+          <ProductDescription>{description}</ProductDescription>
+          <ProductAmenity room_amenities={room_amenities} />
+        </ProductContainer>
+        <CalendarContainer>
+          <Calendar />
+        </CalendarContainer>
+      </DivideContainer>
       <Map detailList={detailList} />
       <HostDetailInfo detailList={detailList} />
       <Notice noticeList={house_rules} />
@@ -91,8 +97,23 @@ const DetailContainer = styled.div``;
 const ProductDescription = styled.div`
   padding: 40px 0;
   border-bottom: 1px solid ${colors.MEDIUMGRAY};
-  ${font(18, 500, 22)};
+  ${font(18, 500, 25)};
   color: ${colors.BLACK};
+`;
+
+const DivideContainer = styled.div`
+  ${flex('', '')};
+`;
+
+const ProductContainer = styled.div`
+  margin-right: 20px;
+  width: 65%;
+`;
+
+const CalendarContainer = styled.div`
+  margin-left: 20px;
+  position: sticky;
+  width: 35%;
 `;
 
 export default Detail;

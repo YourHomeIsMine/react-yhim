@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import AmenityContent from './AmenityContent';
-import { font, colors } from 'styles';
+import { colors, font } from 'styles';
 
 interface ProductAmenityProps {
   room_amenities: AmenityType[];
@@ -24,7 +24,6 @@ const AmenityContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-bottom: 25px;
-  border-bottom: 1px solid ${colors.MEDIUMGRAY};
 `;
 
 const AmenityTitle = styled.div`
@@ -35,8 +34,8 @@ const AmenityTitle = styled.div`
 `;
 
 const TotalListBtn = styled.button`
-  width: 40%;
-  margin: 20px 0px;
+  width: 70%;
+  margin: 20px 0px 0px 0px;
   padding: 20px 0px;
   border: 1px solid ${colors.BLACK};
   border-radius: 10px;

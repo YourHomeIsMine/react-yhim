@@ -32,7 +32,7 @@ const Calendar = () => {
           selected={endDate}
           onChange={(date: Date | null) => setEndDate(date)}
           startDate={subDays(new Date(), -1)}
-          minDate={subDays(new Date(), -1)}
+          minDate={startDate}
           locale={ko}
           showPopperArrow={false}
           dateFormat="yyyy.MM.dd (eee)"
