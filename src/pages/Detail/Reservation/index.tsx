@@ -18,7 +18,7 @@ const Reservation = ({ data }: PriceProps) => {
         <ReservationInfo>
           <ReservationOptionInfo>
             <PriceInfo>
-              ₩{Number(data).toLocaleString()} <span>/박</span>
+              ₩{data.toLocaleString()} <span>/박</span>
             </PriceInfo>
             <Review>
               <ReviewIcon

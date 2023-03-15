@@ -6,7 +6,8 @@ interface PriceProps {
 }
 
 const Price = ({ data }: PriceProps) => {
-  const chargeFee = data * 0.22;
+  const charge = data * 0.22;
+  const totalPrice = data + charge;
 
   return (
     <PriceContainer>
@@ -15,16 +16,16 @@ const Price = ({ data }: PriceProps) => {
         예약 확정 전에는 요금이 청구되지 않습니다.
       </ReservationNotice>
       <DayPrice>
-        <div>₩{Number(data).toLocaleString()} X 5박</div>
-        <div>₩{Number(data).toLocaleString()}원</div>
+        <div>₩{data.toLocaleString()} X 5박</div>
+        <div>₩{data.toLocaleString()}원</div>
       </DayPrice>
       <DayPrice>
         <div>네집내집 서비스 수수료</div>
-        <div>₩{Number(chargeFee).toLocaleString()}원</div>
+        <div>₩{charge.toLocaleString()}원</div>
       </DayPrice>
       <TotalPrice>
         <div>총 합계</div>
-        <div>₩{Number(data + chargeFee).toLocaleString()}원</div>
+        <div>₩{totalPrice.toLocaleString()}원</div>
       </TotalPrice>
     </PriceContainer>
   );

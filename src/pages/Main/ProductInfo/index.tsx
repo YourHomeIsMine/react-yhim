@@ -24,7 +24,7 @@ const ProductInfo = ({ product }: ProductProps) => {
         <Detail>{room_address}</Detail>
         <Detail>{schedule}</Detail>
         <Price>
-          ₩{Number(price).toLocaleString()} <span>/박</span>
+          ₩{price.toLocaleString()} <span>/박</span>
         </Price>
       </InfoBox>
     </Container>
