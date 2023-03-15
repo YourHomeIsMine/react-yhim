@@ -6,6 +6,8 @@ interface PriceProps {
 }
 
 const Price = ({ data }: PriceProps) => {
+  const chargeFee = data * 0.22;
+
   return (
     <PriceContainer>
       <ReservationBtn>예약하기</ReservationBtn>
@@ -18,11 +20,11 @@ const Price = ({ data }: PriceProps) => {
       </DayPrice>
       <DayPrice>
         <div>네집내집 서비스 수수료</div>
-        <div>₩{Number(data * 0.22).toLocaleString()}원</div>
+        <div>₩{Number(chargeFee).toLocaleString()}원</div>
       </DayPrice>
       <TotalPrice>
         <div>총 합계</div>
-        <div>₩{Number(data * 0.22).toLocaleString()}원</div>
+        <div>₩{Number(data + chargeFee).toLocaleString()}원</div>
       </TotalPrice>
     </PriceContainer>
   );

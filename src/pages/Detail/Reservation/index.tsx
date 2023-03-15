@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Calendar from '../Calendar';
 import PersonOption from './PersonOption';
@@ -9,6 +10,8 @@ interface PriceProps {
 }
 
 const Reservation = ({ data }: PriceProps) => {
+  const [date, setDate] = useState<number>(1);
+
   return (
     <ReservationOption>
       <ReservationWrapper>
@@ -26,7 +29,7 @@ const Reservation = ({ data }: PriceProps) => {
             </Review>
           </ReservationOptionInfo>
         </ReservationInfo>
-        <Calendar />
+        <Calendar setDate={setDate} />
         <PersonOption />
         <Price data={data} />
       </ReservationWrapper>
