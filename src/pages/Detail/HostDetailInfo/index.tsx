@@ -7,6 +7,7 @@ interface HostDetailProps {
 
 const HostDetailInfo = ({ detailList }: HostDetailProps) => {
   const { host_image, host, host_created } = detailList;
+  const [year, month] = host_created.split('-');
 
   return (
     <HostContainer>
@@ -16,8 +17,7 @@ const HostDetailInfo = ({ detailList }: HostDetailProps) => {
           <div>
             <HostName>호스트 : {host}님</HostName>
             <HostSignUpDate>
-              회원 가입일 : {host_created.split('-')[0]}년{' '}
-              {host_created.split('-')[1]}월
+              회원 가입일 : {year}년 {month}월
             </HostSignUpDate>
           </div>
         </HostInfo>

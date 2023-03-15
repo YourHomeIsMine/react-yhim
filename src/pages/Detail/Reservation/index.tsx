@@ -31,7 +31,7 @@ const Reservation = ({ data }: PriceProps) => {
         </div>
         <Calendar setDate={setDate} />
         <PersonOption />
-        <Price data={data} />
+        <Price price={data} />
       </ReservationWrapper>
     </ReservationOption>
   );

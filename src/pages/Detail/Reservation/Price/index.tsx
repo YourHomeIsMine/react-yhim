@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { colors, flex, font } from 'styles';
 
 interface PriceProps {
-  data: number;
+  price: number;
 }
 
-const Price = ({ data }: PriceProps) => {
-  const charge = data * 0.22;
-  const totalPrice = data + charge;
+const Price = ({ price }: PriceProps) => {
+  const charge = price * 0.22;
+  const totalPrice = price + charge;
 
   return (
     <div>
@@ -16,8 +16,8 @@ const Price = ({ data }: PriceProps) => {
         예약 확정 전에는 요금이 청구되지 않습니다.
       </ReservationNotice>
       <DayPrice>
-        <div>₩{data.toLocaleString()} X 5박</div>
-        <div>₩{data.toLocaleString()}원</div>
+        <div>₩{price.toLocaleString()} X 5박</div>
+        <div>₩{price.toLocaleString()}원</div>
       </DayPrice>
       <DayPrice>
         <div>네집내집 서비스 수수료</div>
