@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api';
 import { colors, font } from 'styles';
@@ -25,15 +25,15 @@ const Map = ({ detailList }: ProductDetailProps) => {
     googleMapsApiKey: `${process.env.REACT_APP_GOOGLE_MAP_KEY}`,
   });
 
-  const [map, setMap] = React.useState(null);
+  const [map, setMap] = useState(null);
 
-  const onLoad = React.useCallback(function callback(map: any) {
+  const onLoad = useCallback(function callback(map: any) {
     const bounds = new window.google.maps.LatLngBounds(center);
     map.fitBounds(bounds);
     setMap(map);
   }, []);
 
-  const onUnmount = React.useCallback(function callback(map: any) {
+  const onUnmount = useCallback(function callback(map: any) {
     setMap(null);
   }, []);
 

@@ -13,7 +13,7 @@ const Notice = (data: NoticeProps) => {
     <NoticeContainer>
       <NoticeTitle>알아두어야 할 사항</NoticeTitle>
       {noticeList.map((data, i) => (
-        <NoticeContent key={`amenity-${i}}`} data={data} />
+        <NoticeContent key={`notice-${i}}`} data={data} />
       ))}
     </NoticeContainer>
   );
