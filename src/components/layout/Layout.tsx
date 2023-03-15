@@ -3,21 +3,29 @@ import Footer from '../footer/Footer';
 import styled from 'styled-components';
 import { flex } from 'styles';
 import { Outlet } from 'react-router-dom';
+import WrapperLayout from './WrapperLayout';
 
 const Layout = () => {
   return (
     <Container>
       <Header />
-      <Outlet />
+      <Body>
+        <WrapperLayout>
+          <Outlet />
+        </WrapperLayout>
+      </Body>
       <Footer />
     </Container>
   );
 };
 
 const Container = styled.div`
-  ${flex('center', 'center', 'column')}
-  width: 100vw;
+  ${flex('', 'center', 'column')};
   height: 100vh;
+`;
+
+const Body = styled.div`
+  padding: 120px 0px;
 `;
 
 export default Layout;

@@ -1,8 +1,8 @@
-import styled from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
-import { flex } from 'styles';
+import styled from 'styled-components';
 import Category from './Category';
 import ProductInfo from './ProductInfo';
+import { flex } from 'styles';
 
 const Main = () => {
   const [productList, setProductList] = useState<any[]>([]);
@@ -42,40 +42,42 @@ const Main = () => {
   }, [handleScroll]);
 
   useEffect(() => {}, [productList]);
+
   return (
     <ListContainer>
       <CategoryList>
         <Category setCategory={setCategory} setOffset={setOffset} />
       </CategoryList>
       <ContentList>
-        {' '}
-        <ContentListWrapper>
+        <ContentListWrap>
           {productList.map((product, i) => (
-            <ProductInfo product={product} key={`product-${i}`} />
+            <ProductInfo key={`product-${i}`} product={product} />
           ))}
-        </ContentListWrapper>
+        </ContentListWrap>
       </ContentList>
     </ListContainer>
   );
 };
 
 const ListContainer = styled.div`
-  ${flex('', '', 'column')};
-  height: 100%;
-  padding: 60px 0px;
-`;
-const CategoryList = styled.div`
   width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 1;
+  margin-top: 70px;
+  padding: 25px 0px;
 `;
+
+const CategoryList = styled.div`
+  position: fixed;
+  top: 81px;
+  width: 85%;
+  z-index: 10;
+`;
+
 const ContentList = styled.div`
-  ${flex('center', '')};
-  flex-wrap: wrap;
+  width: 100%;
   padding: 100px 0;
 `;
-const ContentListWrapper = styled.div`
+
+const ContentListWrap = styled.div`
   ${flex('', '')};
   max-width: 1440px;
   flex-wrap: wrap;

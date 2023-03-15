@@ -13,10 +13,10 @@ const UserInfo = () => {
   return (
     <BtnBlock>
       <InfoTitle>당신의 공간을 네집내집하세요</InfoTitle>
-      <Icon alt="world" src="/images/world.png"></Icon>
+      <Icon alt="world" src="/images/world.png" />
       <LoginBtn onClick={openModal}>
         <Hamburger alt="hamburger" src="/images/hamburger.png" />
-        <UserIcon alt="user" src="/images/user.png"></UserIcon>
+        <UserIcon alt="user" src="/images/user.png" />
         {isOpen ? <UserSign /> : null}
       </LoginBtn>
     </BtnBlock>

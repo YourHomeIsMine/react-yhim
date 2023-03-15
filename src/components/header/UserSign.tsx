@@ -27,6 +27,7 @@ const UserBox = styled.div`
   background-color: ${colors.WHITE};
   border: 1px solid ${colors.MEDIUMGRAY};
   border-radius: 20px;
+  z-index: 100;
 `;
 
 const SignInUpBox = styled.div`
