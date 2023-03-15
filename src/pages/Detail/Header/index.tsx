@@ -9,7 +9,7 @@ const Header = ({ detailList }: ProductDetailProps) => {
   const { name, district, neighberhood } = detailList;
 
   return (
-    <ProductHeader>
+    <div>
       <ProductTitle>{name}</ProductTitle>
       <ProductInfo>
         <InfoDetailList>
@@ -36,7 +36,7 @@ const Header = ({ detailList }: ProductDetailProps) => {
           </InfoIconList>
         </InfoImageIcon>
       </ProductInfo>
-    </ProductHeader>
+    </div>
   );
 };
 
@@ -46,7 +46,6 @@ const ProductTitle = styled.div`
   color: ${colors.BLACK};
 `;
 
-const ProductHeader = styled.div``;
 const ProductInfo = styled.div`
   ${flex('space-between', 'center')};
   padding: 10px 0px;

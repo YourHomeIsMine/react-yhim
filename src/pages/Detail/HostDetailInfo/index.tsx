@@ -13,13 +13,13 @@ const HostDetailInfo = ({ detailList }: HostDetailProps) => {
       <HostInfoList>
         <HostInfo>
           <HostImage alt="host_image" src={host_image} />
-          <HostDetail>
+          <div>
             <HostName>호스트 : {host}님</HostName>
             <HostSignUpDate>
               회원 가입일 : {host_created.split('-')[0]}년{' '}
               {host_created.split('-')[1]}월
             </HostSignUpDate>
-          </HostDetail>
+          </div>
         </HostInfo>
         <HostEtcInfo>
           <EtcInfoList>
@@ -104,8 +104,6 @@ const HostImage = styled.img`
   margin-right: 10px;
 `;
 
-const HostDetail = styled.div``;
-
 const HostName = styled.div`
   ${font(22, 500, 22)};
   margin-bottom: 5px;
@@ -133,7 +131,6 @@ const HostInfoIcon = styled.img`
 `;
 
 const ExchangeList = styled.div`
-  //width: 50%;
   margin: 10px 0px;
 `;
 

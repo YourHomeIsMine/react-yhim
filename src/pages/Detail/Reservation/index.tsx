@@ -15,7 +15,7 @@ const Reservation = ({ data }: PriceProps) => {
   return (
     <ReservationOption>
       <ReservationWrapper>
-        <ReservationInfo>
+        <div>
           <ReservationOptionInfo>
             <PriceInfo>
               ₩{data.toLocaleString()} <span>/박</span>
@@ -28,7 +28,7 @@ const Reservation = ({ data }: PriceProps) => {
               4.93 · 후기 210개
             </Review>
           </ReservationOptionInfo>
-        </ReservationInfo>
+        </div>
         <Calendar setDate={setDate} />
         <PersonOption />
         <Price data={data} />
@@ -62,8 +62,6 @@ const PriceInfo = styled.div`
     ${font(22, 500)};
   }
 `;
-
-const ReservationInfo = styled.div``;
 
 const Review = styled.div`
   ${font(20, 500, 20)};

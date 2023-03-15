@@ -10,7 +10,7 @@ const Price = ({ data }: PriceProps) => {
   const totalPrice = data + charge;
 
   return (
-    <PriceContainer>
+    <div>
       <ReservationBtn>예약하기</ReservationBtn>
       <ReservationNotice>
         예약 확정 전에는 요금이 청구되지 않습니다.
@@ -27,7 +27,7 @@ const Price = ({ data }: PriceProps) => {
         <div>총 합계</div>
         <div>₩{totalPrice.toLocaleString()}원</div>
       </TotalPrice>
-    </PriceContainer>
+    </div>
   );
 };
 
@@ -49,8 +49,6 @@ const ReservationNotice = styled.div`
   color: ${colors.BLACK};
   text-align: center;
 `;
-
-const PriceContainer = styled.div``;
 
 const DayPrice = styled.div`
   ${flex('space-between', 'center')};
