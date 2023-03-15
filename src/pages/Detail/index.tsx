@@ -72,7 +72,7 @@ const Detail = () => {
   } = detailList;
 
   return (
-    <DetailContainer>
+    <div>
       <Header detailList={detailList} />
       <ProductImage room_images_url={room_images_url} />
       <DivideContainer>
@@ -88,11 +88,9 @@ const Detail = () => {
       </DivideContainer>
       <Map detailList={detailList} />
       <HostDetailInfo detailList={detailList} />
-    </DetailContainer>
+    </div>
   );
 };
-
-const DetailContainer = styled.div``;
 
 const ProductDescription = styled.div`
   padding: 40px 0;

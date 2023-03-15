@@ -156,7 +156,6 @@ const ContactTime = styled.div`
 `;
 
 const HostContact = styled.div`
-  text-align: center;
   width: 50%;
   margin: 20px 0px;
   padding: 20px 0px;
@@ -164,6 +163,7 @@ const HostContact = styled.div`
   border-radius: 10px;
   color: ${colors.BLACK};
   ${font(18, 400)}
+  text-align: center;
 
   :hover {
     background-color: ${colors.LIGHTGRAY};
